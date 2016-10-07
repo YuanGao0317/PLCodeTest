@@ -6,8 +6,6 @@
 //  Copyright © 2016 YuanGao. All rights reserved.
 //
 
-import Foundation
-
 protocol PLAPIService {
     func fetchBooks(completion:() -> ())
     func addBook(completion:() -> ())
@@ -17,7 +15,7 @@ protocol PLAPIService {
     func deleteBooks(completion:() -> ())
 }
 
-class APIServiceController: PLAPIService {
+final class APIServiceController: PLAPIService {
     
     func fetchBooks(completion: () -> ()) {
         

@@ -6,9 +6,7 @@
 //  Copyright © 2016 YuanGao. All rights reserved.
 //
 
-import Foundation
-
-struct Book {
+struct PLBook {
     let author: String
     let categories: String?
     let lastCheckedOut: String?
@@ -35,4 +33,5 @@ struct Book {
         self.title = title
         self.url = url
     }
+    
 }
