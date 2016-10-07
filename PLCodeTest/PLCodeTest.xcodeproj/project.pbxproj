@@ -55,9 +55,9 @@
 		30FEBED01DA7F67D00B80010 /* PLCodeTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLCodeTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FEBED41DA7F67D00B80010 /* PLCodeTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLCodeTestUITests.swift; sourceTree = "<group>"; };
 		30FEBED61DA7F67D00B80010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30FEBEE81DA7FBF300B80010 /* PLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLConstants.swift; sourceTree = "<group>"; };
+		30FEBEE81DA7FBF300B80010 /* PLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PLConstants.swift; sourceTree = "<group>"; tabWidth = 2; };
 		30FEBEEA1DA7FF4600B80010 /* PLBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLBook.swift; sourceTree = "<group>"; };
-		30FEBEED1DA814BE00B80010 /* PLAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLAPIService.swift; sourceTree = "<group>"; };
+		30FEBEED1DA814BE00B80010 /* PLAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PLAPIService.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		30FEBEEF1DA81C2900B80010 /* PLBooks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLBooks.swift; sourceTree = "<group>"; };
 		30FEBEF11DA833E900B80010 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4C046F6925F54A3479D113B9 /* Pods-PLCodeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLCodeTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLCodeTest/Pods-PLCodeTest.release.xcconfig"; sourceTree = "<group>"; };
