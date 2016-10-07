@@ -9,6 +9,7 @@
 import Alamofire
 import SwiftyJSON
 
+
 protocol PLAPIService {
     func fetchBooks(completion: ([PLBook]) -> ())
     func addBook(book: PLBook, completion:() -> ())
@@ -25,9 +26,45 @@ protocol PLAPIService {
 final class APIServiceController: PLAPIService {
     
     func fetchBooks(completion: ([PLBook]) -> ()) {
-        Alamofire.request(.GET, API.books).responseJSON { response in
-            
+        //        Alamofire.request(.GET, API.books).responseJSON { (request, response, result) in
+        //
+        //            switch result {
+        //            case .Success(let data):
+        //                var books: [PLBook] = []
+        //                let booksJSONData = JSON(data)
+        //
+        //                if let arr = booksJSONData.array {
+        //                    for bookJSON in arr {
+        //                        books.append(PLBook(json: bookJSON))
+        //                    }
+        //                }
+        //
+        //            case .Failure(let error):
+        //                debugPrint(error)
+        //            }
+        //        }
+        let defaultConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: defaultConfiguration)
+        if let url = NSURL(string: API.books) {
+            (session.dataTaskWithURL(url) { (data, response, error) in
+                var books: [PLBook] = []
+                
+                if let error = error {
+                    print("Error: \(error)")
+                } else if let data = data {
+                    let booksJSONData = JSON(data:data)
+                    if let arr = booksJSONData.array {
+                        for bookJSON in arr {
+                            books.append(PLBook(json: bookJSON))
+                        }
+                    }
+                    completion(books)
+                }
+            }).resume()
         }
+        
+        
+        
     }
     
     func addBook(book: PLBook, completion:() -> ()) {

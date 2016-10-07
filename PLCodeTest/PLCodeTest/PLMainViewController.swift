@@ -15,6 +15,9 @@ class PLMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        apiService.fetchBooks { (books) -> () in
+            debugPrint(books)
+        }
     }
 
     override func didReceiveMemoryWarning() {

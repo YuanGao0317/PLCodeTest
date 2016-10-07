@@ -9,21 +9,21 @@ import SwiftyJSON
 
 struct PLBook {
     let author: String
-    let categories: String?
-    let lastCheckedOut: String?
-    let lastCheckedOutBy: String?
-    let publisher: String?
+    let categories: String
+    let lastCheckedOut: String
+    let lastCheckedOutBy: String
+    let publisher: String
     let title: String
-    let url: String?
+    let url: String
     
     init(
         author: String,
-        categories: String?,
-        lastCheckedOut: String?,
-        lastCheckedOutBy: String?,
-        publisher: String?,
+        categories: String,
+        lastCheckedOut: String,
+        lastCheckedOutBy: String,
+        publisher: String,
         title: String,
-        url: String?
+        url: String
         )
     {
         self.author = author
