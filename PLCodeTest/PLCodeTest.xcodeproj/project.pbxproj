@@ -14,6 +14,7 @@
 		30FEBEBF1DA7F67D00B80010 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30FEBEBD1DA7F67D00B80010 /* LaunchScreen.storyboard */; };
 		30FEBECA1DA7F67D00B80010 /* PLCodeTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEC91DA7F67D00B80010 /* PLCodeTestTests.swift */; };
 		30FEBED51DA7F67D00B80010 /* PLCodeTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBED41DA7F67D00B80010 /* PLCodeTestUITests.swift */; };
+		30FEBEE91DA7FBF300B80010 /* PLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEE81DA7FBF300B80010 /* PLConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		30FEBED01DA7F67D00B80010 /* PLCodeTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLCodeTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FEBED41DA7F67D00B80010 /* PLCodeTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLCodeTestUITests.swift; sourceTree = "<group>"; };
 		30FEBED61DA7F67D00B80010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30FEBEE81DA7FBF300B80010 /* PLConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		30FEBEB31DA7F67D00B80010 /* PLCodeTest */ = {
 			isa = PBXGroup;
 			children = (
+				30FEBEE71DA7FBD300B80010 /* Constants */,
 				30FEBEE61DA7FADA00B80010 /* Assets */,
 				30FEBEE41DA7FA4C00B80010 /* Models */,
 				30FEBEE21DA7F8E000B80010 /* Controllers */,
@@ -163,6 +166,14 @@
 				30FEBEC01DA7F67D00B80010 /* Info.plist */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		30FEBEE71DA7FBD300B80010 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				30FEBEE81DA7FBF300B80010 /* PLConstants.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 			files = (
 				30FEBEB71DA7F67D00B80010 /* PLMainViewController.swift in Sources */,
 				30FEBEB51DA7F67D00B80010 /* AppDelegate.swift in Sources */,
+				30FEBEE91DA7FBF300B80010 /* PLConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
