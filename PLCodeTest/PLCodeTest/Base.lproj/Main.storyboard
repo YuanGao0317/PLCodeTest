@@ -24,7 +24,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Books" id="VVQ-u7-Zxv"/>
+                    <navigationItem key="navigationItem" title="Books" id="VVQ-u7-Zxv">
+                        <barButtonItem key="leftBarButtonItem" image="add" id="nK3-I9-nNQ">
+                            <connections>
+                                <action selector="onAddBtnClick:" destination="BYZ-38-t0r" id="6xW-9C-Li1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,4 +55,7 @@
             <point key="canvasLocation" x="393" y="-346"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="32" height="32"/>
+    </resources>
 </document>
