@@ -9,6 +9,8 @@
 import UIKit
 
 class PLMainViewController: UIViewController {
+    
+    lazy var apiService = APIServiceController()
 
     override func viewDidLoad() {
         super.viewDidLoad()

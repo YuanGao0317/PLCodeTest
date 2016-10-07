@@ -6,6 +6,8 @@
 //  Copyright © 2016 YuanGao. All rights reserved.
 //
 
+import Alamofire
+
 protocol PLAPIService {
     func fetchBooks(completion:() -> ())
     func addBook(completion:() -> ())
@@ -18,7 +20,7 @@ protocol PLAPIService {
 final class APIServiceController: PLAPIService {
     
     func fetchBooks(completion: () -> ()) {
-        
+//        Alamofire
     }
     
     func addBook(completion:() -> ()) {

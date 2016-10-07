@@ -8,7 +8,7 @@
 
 
 final class PLBooks {
-    static let sharedInstance = sim()
+    static let sharedInstance = PLBooks()
     
     lazy var apiService = APIServiceController()
     
