@@ -97,13 +97,11 @@
 		30FEBEB31DA7F67D00B80010 /* PLCodeTest */ = {
 			isa = PBXGroup;
 			children = (
+				30FEBEE61DA7FADA00B80010 /* Assets */,
 				30FEBEE41DA7FA4C00B80010 /* Models */,
 				30FEBEE21DA7F8E000B80010 /* Controllers */,
 				30FEBEB41DA7F67D00B80010 /* AppDelegate.swift */,
 				30FEBEB81DA7F67D00B80010 /* Main.storyboard */,
-				30FEBEBB1DA7F67D00B80010 /* Assets.xcassets */,
-				30FEBEBD1DA7F67D00B80010 /* LaunchScreen.storyboard */,
-				30FEBEC01DA7F67D00B80010 /* Info.plist */,
 			);
 			path = PLCodeTest;
 			sourceTree = "<group>";
@@ -155,6 +153,16 @@
 			children = (
 			);
 			name = concerns;
+			sourceTree = "<group>";
+		};
+		30FEBEE61DA7FADA00B80010 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				30FEBEBB1DA7F67D00B80010 /* Assets.xcassets */,
+				30FEBEBD1DA7F67D00B80010 /* LaunchScreen.storyboard */,
+				30FEBEC01DA7F67D00B80010 /* Info.plist */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
