@@ -13,8 +13,12 @@ protocol PLAPIService {
     func fetchBooks(completion: ([PLBook]) -> ())
     func addBook(book: PLBook, completion:() -> ())
     func getBook(path: String, completion:() -> ())
-    func updateBook(lastCheckedOutBy: String, lastCheckedOut: String, path: String, completion:() -> ())
-    func deleteBook(url: String, completion:() -> ())
+    func updateBook(lastCheckedOutBy: String,
+        lastCheckedOut: String,
+        path: String,
+        completion:() -> ()
+    )
+    func deleteBook(path: String, completion:() -> ())
     func deleteBooks(completion:() -> ())
 }
 
@@ -54,18 +58,19 @@ final class APIServiceController: PLAPIService {
         lastCheckedOutBy: String,
         lastCheckedOut: String,
         path: String,
-        completion:() -> ()) {
-            
-            let requestURL = API.server + path
-            let parameters : [String:AnyObject] = [
-                "lastCheckedOutBy": lastCheckedOutBy,
-                "lastCheckedOut" : lastCheckedOut
-            ]
-            Alamofire.request(.PUT, requestURL, parameters: parameters, encoding: .JSON)
-                .validate(statusCode: 200..<300)
-                .response { (request, response, data, error) in
-                    
-            }
+        completion:() -> ()
+        )
+    {
+        let requestURL = API.server + path
+        let parameters : [String:AnyObject] = [
+            "lastCheckedOutBy": lastCheckedOutBy,
+            "lastCheckedOut" : lastCheckedOut
+        ]
+        Alamofire.request(.PUT, requestURL, parameters: parameters, encoding: .JSON)
+            .validate(statusCode: 200..<300)
+            .response { (request, response, data, error) in
+                
+        }
     }
     
     func deleteBook(path: String, completion:() -> ()) {
@@ -73,7 +78,7 @@ final class APIServiceController: PLAPIService {
         Alamofire.request(.DELETE, requestURL)
             .validate(statusCode: 200..<300)
             .response{(request, response, data, error) in
-
+                
         }
     }
     
