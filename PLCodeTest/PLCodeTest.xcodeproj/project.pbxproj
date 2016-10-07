@@ -18,6 +18,7 @@
 		30FEBEEB1DA7FF4600B80010 /* PLBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEEA1DA7FF4600B80010 /* PLBook.swift */; };
 		30FEBEEE1DA814BE00B80010 /* PLAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEED1DA814BE00B80010 /* PLAPIService.swift */; };
 		30FEBEF01DA81C2900B80010 /* PLBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEEF1DA81C2900B80010 /* PLBooks.swift */; };
+		30FEBEF21DA833E900B80010 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FEBEF11DA833E900B80010 /* Default-568h@2x.png */; };
 		E850538FE028F335378AB04A /* Pods_PLCodeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EBE55E4B26BB26152B4175 /* Pods_PLCodeTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		30FEBEEA1DA7FF4600B80010 /* PLBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLBook.swift; sourceTree = "<group>"; };
 		30FEBEED1DA814BE00B80010 /* PLAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLAPIService.swift; sourceTree = "<group>"; };
 		30FEBEEF1DA81C2900B80010 /* PLBooks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLBooks.swift; sourceTree = "<group>"; };
+		30FEBEF11DA833E900B80010 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4C046F6925F54A3479D113B9 /* Pods-PLCodeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLCodeTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLCodeTest/Pods-PLCodeTest.release.xcconfig"; sourceTree = "<group>"; };
 		56EBE55E4B26BB26152B4175 /* Pods_PLCodeTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PLCodeTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93B1532DF7886F520D288CE /* Pods-PLCodeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLCodeTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PLCodeTest/Pods-PLCodeTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		30FEBEA81DA7F67D00B80010 = {
 			isa = PBXGroup;
 			children = (
+				30FEBEF11DA833E900B80010 /* Default-568h@2x.png */,
 				30FEBEB31DA7F67D00B80010 /* PLCodeTest */,
 				30FEBEC81DA7F67D00B80010 /* PLCodeTestTests */,
 				30FEBED31DA7F67D00B80010 /* PLCodeTestUITests */,
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30FEBEBF1DA7F67D00B80010 /* LaunchScreen.storyboard in Resources */,
+				30FEBEF21DA833E900B80010 /* Default-568h@2x.png in Resources */,
 				30FEBEBC1DA7F67D00B80010 /* Assets.xcassets in Resources */,
 				30FEBEBA1DA7F67D00B80010 /* Main.storyboard in Resources */,
 			);

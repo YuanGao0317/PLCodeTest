@@ -7,39 +7,81 @@
 //
 
 import Alamofire
+import SwiftyJSON
 
 protocol PLAPIService {
-    func fetchBooks(completion:() -> ())
-    func addBook(completion:() -> ())
-    func getBook(url: String, completion:() -> ())
-    func updateBook(url: String, completion:() -> ())
+    func fetchBooks(completion: ([PLBook]) -> ())
+    func addBook(book: PLBook, completion:() -> ())
+    func getBook(path: String, completion:() -> ())
+    func updateBook(lastCheckedOutBy: String, lastCheckedOut: String, path: String, completion:() -> ())
     func deleteBook(url: String, completion:() -> ())
     func deleteBooks(completion:() -> ())
 }
 
 final class APIServiceController: PLAPIService {
     
-    func fetchBooks(completion: () -> ()) {
-//        Alamofire
+    func fetchBooks(completion: ([PLBook]) -> ()) {
+        Alamofire.request(.GET, API.books).responseJSON { response in
+            
+        }
     }
     
-    func addBook(completion:() -> ()) {
-        
+    func addBook(book: PLBook, completion:() -> ()) {
+        let parameters : [String:AnyObject] = [
+            "author": book.author,
+            "categories": book.categories!,
+            "title": book.title,
+            "publisher": book.publisher!
+        ]
+        Alamofire.request(.POST, API.books,
+            parameters: parameters,
+            encoding: .JSON
+            )
+            .validate(statusCode: 200..<300)
+            .response { (request, response, data, error) in
+                debugPrint("Book created: \(data)")
+        }
     }
     
-    func getBook(url: String, completion:() -> ()) {
-        
+    func getBook(path: String, completion:() -> ()) {
+        let requestURL = API.server + path
+        Alamofire.request(.GET, requestURL).responseJSON { response in
+            
+        }
     }
     
-    func updateBook(url: String, completion:() -> ()) {
-        
+    func updateBook(
+        lastCheckedOutBy: String,
+        lastCheckedOut: String,
+        path: String,
+        completion:() -> ()) {
+            
+            let requestURL = API.server + path
+            let parameters : [String:AnyObject] = [
+                "lastCheckedOutBy": lastCheckedOutBy,
+                "lastCheckedOut" : lastCheckedOut
+            ]
+            Alamofire.request(.PUT, requestURL, parameters: parameters, encoding: .JSON)
+                .validate(statusCode: 200..<300)
+                .response { (request, response, data, error) in
+                    
+            }
     }
     
-    func deleteBook(url: String, completion:() -> ()) {
-        
+    func deleteBook(path: String, completion:() -> ()) {
+        let requestURL = API.server + path
+        Alamofire.request(.DELETE, requestURL)
+            .validate(statusCode: 200..<300)
+            .response{(request, response, data, error) in
+
+        }
     }
     
     func deleteBooks(completion:() -> ()) {
-        
+        Alamofire.request(.DELETE, API.cleanBooks)
+            .validate(statusCode: 200..<300)
+            .response{(request, response, data, error) in
+                
+        }
     }
 }
