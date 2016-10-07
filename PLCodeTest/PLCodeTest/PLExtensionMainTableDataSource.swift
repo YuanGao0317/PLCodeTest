@@ -11,13 +11,16 @@ import UIKit
 extension PLMainViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return books.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let book = books[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellReuseIdentifier, forIndexPath: indexPath)
-        cell.textLabel?.text = "Book Title"
-        cell.detailTextLabel?.text = "Book Author"
+        
+        cell.textLabel?.text = book.title
+        cell.detailTextLabel?.text = book.author
         
         return cell
     }

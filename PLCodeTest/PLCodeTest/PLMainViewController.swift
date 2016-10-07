@@ -16,6 +16,16 @@ class PLMainViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		loadData()
+	}
+	
+	@IBAction func onAddBtnClick(sender: UIBarButtonItem) {
+		
+	}
+	
+	
+	
+	private func loadData(){
 		apiService.fetchBooks { (result) -> Void in
 			do {
 				let books = try result.resolve()
@@ -25,8 +35,5 @@ class PLMainViewController: UIViewController {
 			}
 		}
 	}
-	
-	
-	
 }
 

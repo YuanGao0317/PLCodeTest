@@ -10,7 +10,7 @@ import UIKit
 
 extension PLMainViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath.row)
         
     }

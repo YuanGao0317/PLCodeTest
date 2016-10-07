@@ -63,7 +63,11 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Books" id="uOd-WF-6iy">
-                        <barButtonItem key="leftBarButtonItem" image="add" id="PTw-Ol-Tqn"/>
+                        <barButtonItem key="leftBarButtonItem" image="add" id="PTw-Ol-Tqn">
+                            <connections>
+                                <action selector="onAddBtnClick:" destination="S2n-OV-olL" id="dcB-ru-udK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mWR-Xv-bvQ" id="Zb4-3X-Qhm"/>
