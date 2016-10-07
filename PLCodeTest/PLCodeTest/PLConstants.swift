@@ -12,3 +12,7 @@ enum API {
   static let books = server + "books/"
   static let cleanBooks = server + "clean/"
 }
+
+enum Constants {
+  static let cellReuseIdentifier = "cell"
+}
