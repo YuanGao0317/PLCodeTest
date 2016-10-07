@@ -9,22 +9,32 @@
 import UIKit
 
 class PLMainViewController: UIViewController {
-    
-    lazy var apiService = APIServiceController()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        apiService.fetchBooks { (books) -> () in
-            debugPrint(books)
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+	
+	lazy var apiService = APIServiceController()
+	var books: [PLBook] = [] {
+		didSet {
+			debugPrint(self.books)
+		}
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		// Do any additional setup after loading the view, typically from a nib.
+		apiService.fetchBooks { (result) -> Void in
+			do {
+				let books = try result.resolve()
+				self.books = books
+			} catch {
+				debugPrint(error)
+			}
+		}
+	}
+	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
+	
+	
 }
 

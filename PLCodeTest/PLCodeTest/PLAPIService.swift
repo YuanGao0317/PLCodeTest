@@ -10,8 +10,10 @@ import Alamofire
 import SwiftyJSON
 
 
+typealias done = Result<[PLBook]> -> Void
+
 protocol PLAPIService {
-    func fetchBooks(completion: ([PLBook]) -> ())
+    func fetchBooks(completion: done)
     func addBook(book: PLBook, completion:() -> ())
     func getBook(path: String, completion:() -> ())
     func updateBook(lastCheckedOutBy: String,
@@ -25,7 +27,8 @@ protocol PLAPIService {
 
 final class APIServiceController: PLAPIService {
     
-    func fetchBooks(completion: ([PLBook]) -> ()) {
+    
+    func fetchBooks(completion: done) {
         //        Alamofire.request(.GET, API.books).responseJSON { (request, response, result) in
         //
         //            switch result {
@@ -45,34 +48,38 @@ final class APIServiceController: PLAPIService {
         //        }
         let defaultConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: defaultConfiguration)
+        
         if let url = NSURL(string: API.books) {
             (session.dataTaskWithURL(url) { (data, response, error) in
-                var books: [PLBook] = []
                 
+                var books: [PLBook] = []
                 if let error = error {
-                    print("Error: \(error)")
-                } else if let data = data {
-                    let booksJSONData = JSON(data:data)
-                    if let arr = booksJSONData.array {
-                        for bookJSON in arr {
-                            books.append(PLBook(json: bookJSON))
-                        }
-                    }
-                    completion(books)
+                    return completion( Result.Failure(error) )
                 }
+                guard let data = data else {
+                    return completion( Result.Failure(BookError.NoData) )
+                }
+
+                let booksJSONData = JSON(data:data)
+                if let arr = booksJSONData.array {
+                    for bookJSON in arr {
+                        books.append( PLBook(json: bookJSON) )
+                    }
+                } else {
+                    return completion( Result.Failure(BookError.NoData) )
+                }
+                
+                completion( Result.Success(books) )
             }).resume()
         }
-        
-        
-        
     }
     
     func addBook(book: PLBook, completion:() -> ()) {
         let parameters : [String:AnyObject] = [
             "author": book.author,
-            "categories": book.categories!,
+            "categories": book.categories,
             "title": book.title,
-            "publisher": book.publisher!
+            "publisher": book.publisher
         ]
         Alamofire.request(.POST, API.books,
             parameters: parameters,
@@ -91,12 +98,10 @@ final class APIServiceController: PLAPIService {
         }
     }
     
-    func updateBook(
-        lastCheckedOutBy: String,
-        lastCheckedOut: String,
-        path: String,
-        completion:() -> ()
-        )
+    func updateBook(lastCheckedOutBy: String,
+                    lastCheckedOut: String,
+                    path: String,
+                    completion:() -> ())
     {
         let requestURL = API.server + path
         let parameters : [String:AnyObject] = [

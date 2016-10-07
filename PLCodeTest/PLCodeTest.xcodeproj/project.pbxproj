@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300A25A31DA85146007D653F /* PLErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A25A21DA85146007D653F /* PLErrors.swift */; };
 		30FEBEB51DA7F67D00B80010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEB41DA7F67D00B80010 /* AppDelegate.swift */; };
 		30FEBEB71DA7F67D00B80010 /* PLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEB61DA7F67D00B80010 /* PLMainViewController.swift */; };
 		30FEBEBA1DA7F67D00B80010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30FEBEB81DA7F67D00B80010 /* Main.storyboard */; };
@@ -40,9 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		300A25A21DA85146007D653F /* PLErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PLErrors.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		30FEBEB11DA7F67D00B80010 /* PLCodeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLCodeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FEBEB41DA7F67D00B80010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		30FEBEB61DA7F67D00B80010 /* PLMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLMainViewController.swift; sourceTree = "<group>"; };
+		30FEBEB61DA7F67D00B80010 /* PLMainViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PLMainViewController.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		30FEBEB91DA7F67D00B80010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30FEBEBB1DA7F67D00B80010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30FEBEBE1DA7F67D00B80010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				30FEBEE21DA7F8E000B80010 /* Controllers */,
 				30FEBEB41DA7F67D00B80010 /* AppDelegate.swift */,
 				30FEBEB81DA7F67D00B80010 /* Main.storyboard */,
+				300A25A21DA85146007D653F /* PLErrors.swift */,
 			);
 			path = PLCodeTest;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				30FEBEF01DA81C2900B80010 /* PLBooks.swift in Sources */,
 				30FEBEEE1DA814BE00B80010 /* PLAPIService.swift in Sources */,
 				30FEBEB71DA7F67D00B80010 /* PLMainViewController.swift in Sources */,
+				300A25A31DA85146007D653F /* PLErrors.swift in Sources */,
 				30FEBEB51DA7F67D00B80010 /* AppDelegate.swift in Sources */,
 				30FEBEEB1DA7FF4600B80010 /* PLBook.swift in Sources */,
 				30FEBEE91DA7FBF300B80010 /* PLConstants.swift in Sources */,
