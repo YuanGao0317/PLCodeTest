@@ -10,16 +10,13 @@ import UIKit
 
 class PLMainViewController: UIViewController {
 	
+	@IBOutlet weak var tableView: UITableView!
 	lazy var apiService = APIServiceController()
-	var books: [PLBook] = [] {
-		didSet {
-			debugPrint(self.books)
-		}
-	}
+	var books: [PLBook] = [] { didSet { tableView.reloadData() } }
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		
 		apiService.fetchBooks { (result) -> Void in
 			do {
 				let books = try result.resolve()
@@ -30,9 +27,9 @@ class PLMainViewController: UIViewController {
 		}
 	}
 	
-    @IBAction func onAddBtnClick(sender: UIBarButtonItem) {
-    }
-    
+	@IBAction func onAddBtnClick(sender: UIBarButtonItem) {
+	}
+	
 	
 	
 }
