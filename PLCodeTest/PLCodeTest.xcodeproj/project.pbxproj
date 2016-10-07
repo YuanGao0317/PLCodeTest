@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		300A25A31DA85146007D653F /* PLErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A25A21DA85146007D653F /* PLErrors.swift */; };
-		300A25A61DA85B69007D653F /* PLMainViewController+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A25A51DA85B69007D653F /* PLMainViewController+TableViewDataSource.swift */; };
-		300A25A81DA85C29007D653F /* PLMainView+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A25A71DA85C29007D653F /* PLMainView+TableViewDelegate.swift */; };
+		300A25A61DA85B69007D653F /* PLExtensionMainTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A25A51DA85B69007D653F /* PLExtensionMainTableDataSource.swift */; };
+		300A25A81DA85C29007D653F /* PLExtensionMainTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A25A71DA85C29007D653F /* PLExtensionMainTableDelegate.swift */; };
 		30FEBEB51DA7F67D00B80010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEB41DA7F67D00B80010 /* AppDelegate.swift */; };
 		30FEBEB71DA7F67D00B80010 /* PLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEB61DA7F67D00B80010 /* PLMainViewController.swift */; };
 		30FEBEBA1DA7F67D00B80010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30FEBEB81DA7F67D00B80010 /* Main.storyboard */; };
@@ -44,8 +44,8 @@
 
 /* Begin PBXFileReference section */
 		300A25A21DA85146007D653F /* PLErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PLErrors.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
-		300A25A51DA85B69007D653F /* PLMainViewController+TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PLMainViewController+TableViewDataSource.swift"; sourceTree = "<group>"; };
-		300A25A71DA85C29007D653F /* PLMainView+TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PLMainView+TableViewDelegate.swift"; sourceTree = "<group>"; };
+		300A25A51DA85B69007D653F /* PLExtensionMainTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLExtensionMainTableDataSource.swift; sourceTree = "<group>"; };
+		300A25A71DA85C29007D653F /* PLExtensionMainTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLExtensionMainTableDelegate.swift; sourceTree = "<group>"; };
 		30FEBEB11DA7F67D00B80010 /* PLCodeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLCodeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FEBEB41DA7F67D00B80010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30FEBEB61DA7F67D00B80010 /* PLMainViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PLMainViewController.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
@@ -107,8 +107,8 @@
 		300A25A41DA85B0C007D653F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				300A25A51DA85B69007D653F /* PLMainViewController+TableViewDataSource.swift */,
-				300A25A71DA85C29007D653F /* PLMainView+TableViewDelegate.swift */,
+				300A25A51DA85B69007D653F /* PLExtensionMainTableDataSource.swift */,
+				300A25A71DA85C29007D653F /* PLExtensionMainTableDelegate.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -420,10 +420,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				300A25A81DA85C29007D653F /* PLMainView+TableViewDelegate.swift in Sources */,
+				300A25A81DA85C29007D653F /* PLExtensionMainTableDelegate.swift in Sources */,
 				30FEBEF01DA81C2900B80010 /* PLBooks.swift in Sources */,
 				30FEBEEE1DA814BE00B80010 /* PLAPIService.swift in Sources */,
-				300A25A61DA85B69007D653F /* PLMainViewController+TableViewDataSource.swift in Sources */,
+				300A25A61DA85B69007D653F /* PLExtensionMainTableDataSource.swift in Sources */,
 				30FEBEB71DA7F67D00B80010 /* PLMainViewController.swift in Sources */,
 				300A25A31DA85146007D653F /* PLErrors.swift in Sources */,
 				30FEBEB51DA7F67D00B80010 /* AppDelegate.swift in Sources */,

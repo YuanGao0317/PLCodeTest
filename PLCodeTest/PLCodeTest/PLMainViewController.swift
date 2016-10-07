@@ -16,7 +16,6 @@ class PLMainViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		apiService.fetchBooks { (result) -> Void in
 			do {
 				let books = try result.resolve()
@@ -25,9 +24,6 @@ class PLMainViewController: UIViewController {
 				debugPrint(error)
 			}
 		}
-	}
-	
-	@IBAction func onAddBtnClick(sender: UIBarButtonItem) {
 	}
 	
 	
