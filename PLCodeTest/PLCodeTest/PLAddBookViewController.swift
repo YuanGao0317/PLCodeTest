@@ -10,6 +10,7 @@ import UIKit
 
 class PLAddBookViewController: UIViewController {
   
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var formView: PLNewBookFormView!
   var apiService: PLAPIService?
   
@@ -42,16 +43,18 @@ class PLAddBookViewController: UIViewController {
                             title: title,
                             url: ""
       )
-      
+      activityIndicator.startAnimating()
       apiService?.addBook(book) { (result) in
         do {
           let _ = try result.resolve()
           DispatchQueue.main.async { [unowned that = self] in
+            that.activityIndicator.stopAnimating()
             that.snackMessage("Book is created!")
             that.resetFormTextFields()
           }
         } catch {
           DispatchQueue.main.async { [unowned that = self] in
+            that.activityIndicator.stopAnimating()
             that.snackMessage("Failed to create book.")
           }
         }

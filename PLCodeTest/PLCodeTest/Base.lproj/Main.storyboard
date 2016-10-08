@@ -32,6 +32,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-SJ-ilf" customClass="PLNewBookFormView" customModule="PLCodeTest" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.37868923611111116" green="0.37868923611111116" blue="0.37868923611111116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="iX4-T1-pNF">
+                                <frame key="frameInset" minX="169" minY="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.83568699395042845" blue="0.83521619206623776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -45,6 +50,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="iX4-T1-pNF" id="U8E-ra-kBF"/>
                         <outlet property="formView" destination="kfc-SJ-ilf" id="GJX-7c-gqN"/>
                     </connections>
                 </viewController>
@@ -128,7 +134,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dcQ-rA-5Yd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bF1-Pv-SQx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bF1-Pv-SQx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
