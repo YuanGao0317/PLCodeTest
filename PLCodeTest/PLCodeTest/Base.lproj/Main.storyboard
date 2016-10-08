@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4V5-RG-B77">
-                                <frame key="frameInset" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4V5-RG-B77">
+                                <color key="backgroundColor" red="0.13996274920121821" green="0.006750417099946171" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Add Book" id="7M5-0z-evo">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="MqF-wZ-zVA">
@@ -31,45 +30,24 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-SJ-ilf">
-                                <frame key="frameInset" minX="61" minY="91" width="252" height="278"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yO7-6h-yHr">
-                                        <frame key="frameInset" minX="78" minY="40" width="97" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Npy-M2-SRb">
-                                        <frame key="frameInset" minX="78" minY="84" width="97" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QYx-e5-COS">
-                                        <frame key="frameInset" minX="78" minY="122" width="97" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ceb-O2-0ip">
-                                        <frame key="frameInset" minX="78" minY="166" width="97" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbb-fO-KIx">
-                                        <frame key="frameInset" minX="96" minY="222" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-SJ-ilf" customClass="PLNewBookFormView" customModule="PLCodeTest" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.37868923611111116" green="0.37868923611111116" blue="0.37868923611111116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="right" secondItem="4V5-RG-B77" secondAttribute="right" id="6ED-YB-pbf"/>
+                            <constraint firstItem="4V5-RG-B77" firstAttribute="left" secondItem="9Qq-Ig-akO" secondAttribute="left" id="KPJ-zh-5PI"/>
+                            <constraint firstItem="4V5-RG-B77" firstAttribute="top" secondItem="Gdx-k7-5og" secondAttribute="bottom" id="Myq-Ux-fWq"/>
+                            <constraint firstItem="kfc-SJ-ilf" firstAttribute="left" secondItem="9Qq-Ig-akO" secondAttribute="left" id="hHx-p0-7ke"/>
+                            <constraint firstItem="kfc-SJ-ilf" firstAttribute="top" secondItem="4V5-RG-B77" secondAttribute="bottom" id="hRb-DD-LO3"/>
+                            <constraint firstAttribute="right" secondItem="kfc-SJ-ilf" secondAttribute="right" id="kNf-U7-RH8"/>
+                            <constraint firstItem="xqG-wD-Z7k" firstAttribute="top" secondItem="kfc-SJ-ilf" secondAttribute="bottom" id="xve-pv-hkX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="formView" destination="kfc-SJ-ilf" id="GJX-7c-gqN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELQ-Ml-aOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,7 +125,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dcQ-rA-5Yd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bF1-Pv-SQx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bF1-Pv-SQx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

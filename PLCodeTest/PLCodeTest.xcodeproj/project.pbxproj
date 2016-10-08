@@ -12,6 +12,8 @@
 		300A25A61DA85B69007D653F /* PLExtensionMainTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A25A51DA85B69007D653F /* PLExtensionMainTableDataSource.swift */; };
 		300A25A81DA85C29007D653F /* PLExtensionMainTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A25A71DA85C29007D653F /* PLExtensionMainTableDelegate.swift */; };
 		300A25AB1DA86617007D653F /* PLAddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A25AA1DA86617007D653F /* PLAddBookViewController.swift */; };
+		30D556591DA94F95006D7003 /* PLNewBookFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D556581DA94F95006D7003 /* PLNewBookFormView.swift */; };
+		30D5565B1DA94FAF006D7003 /* PLNewBookFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D5565A1DA94FAF006D7003 /* PLNewBookFormView.xib */; };
 		30FEBEB51DA7F67D00B80010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEB41DA7F67D00B80010 /* AppDelegate.swift */; };
 		30FEBEB71DA7F67D00B80010 /* PLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEB61DA7F67D00B80010 /* PLMainViewController.swift */; };
 		30FEBEBA1DA7F67D00B80010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30FEBEB81DA7F67D00B80010 /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		300A25A51DA85B69007D653F /* PLExtensionMainTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLExtensionMainTableDataSource.swift; sourceTree = "<group>"; };
 		300A25A71DA85C29007D653F /* PLExtensionMainTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLExtensionMainTableDelegate.swift; sourceTree = "<group>"; };
 		300A25AA1DA86617007D653F /* PLAddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLAddBookViewController.swift; sourceTree = "<group>"; };
+		30D556581DA94F95006D7003 /* PLNewBookFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLNewBookFormView.swift; sourceTree = "<group>"; };
+		30D5565A1DA94FAF006D7003 /* PLNewBookFormView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLNewBookFormView.xib; sourceTree = "<group>"; };
 		30FEBEB11DA7F67D00B80010 /* PLCodeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLCodeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FEBEB41DA7F67D00B80010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30FEBEB61DA7F67D00B80010 /* PLMainViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PLMainViewController.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
@@ -138,6 +142,8 @@
 		300A25AC1DA86B39007D653F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				30D556581DA94F95006D7003 /* PLNewBookFormView.swift */,
+				30D5565A1DA94FAF006D7003 /* PLNewBookFormView.xib */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				30FEBEBF1DA7F67D00B80010 /* LaunchScreen.storyboard in Resources */,
 				30FEBEF21DA833E900B80010 /* Default-568h@2x.png in Resources */,
 				30FEBEBC1DA7F67D00B80010 /* Assets.xcassets in Resources */,
+				30D5565B1DA94FAF006D7003 /* PLNewBookFormView.xib in Resources */,
 				30FEBEBA1DA7F67D00B80010 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,6 +568,7 @@
 				30FEBEB71DA7F67D00B80010 /* PLMainViewController.swift in Sources */,
 				300A25A31DA85146007D653F /* PLErrors.swift in Sources */,
 				30FEBEB51DA7F67D00B80010 /* AppDelegate.swift in Sources */,
+				30D556591DA94F95006D7003 /* PLNewBookFormView.swift in Sources */,
 				300A25AB1DA86617007D653F /* PLAddBookViewController.swift in Sources */,
 				30FEBEEB1DA7FF4600B80010 /* PLBook.swift in Sources */,
 				30FEBEE91DA7FBF300B80010 /* PLConstants.swift in Sources */,
@@ -656,7 +664,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -696,7 +704,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -708,6 +716,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 582BFBFEFF6A3D251C7E6DB7 /* Pods-PLCodeTest.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PLCodeTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -722,6 +731,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D570332FD75E052029A756BF /* Pods-PLCodeTest.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PLCodeTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;

@@ -10,6 +10,8 @@ import UIKit
 
 class PLAddBookViewController: UIViewController {
   
+  @IBOutlet weak var formView: PLNewBookFormView!
+  
   @IBAction func onDoneBtnClick(_ sender: UIBarButtonItem) {
     presentingViewController?.dismiss(animated: true, completion: nil)
   }

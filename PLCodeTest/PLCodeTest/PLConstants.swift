@@ -16,4 +16,6 @@ enum API {
 enum Constants {
   static let cellReuseIdentifier = "cell"
   static let addBookSegue = "AddBookSegue"
+  
+  static let PLNewBookFormView = "PLNewBookFormView"
 }
