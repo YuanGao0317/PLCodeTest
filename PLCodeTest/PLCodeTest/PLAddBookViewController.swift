@@ -11,8 +11,20 @@ import UIKit
 class PLAddBookViewController: UIViewController {
   
   @IBOutlet weak var formView: PLNewBookFormView!
+
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    formView.raisedbutton.addTarget(self, action: #selector(PLAddBookViewController.buttonTapped), for: .touchUpInside)
+  }
   
   @IBAction func onDoneBtnClick(_ sender: UIBarButtonItem) {
+    view.endEditing(true)
     presentingViewController?.dismiss(animated: true, completion: nil)
+  }
+  
+  func buttonTapped() {
+    print("hello")
   }
 }

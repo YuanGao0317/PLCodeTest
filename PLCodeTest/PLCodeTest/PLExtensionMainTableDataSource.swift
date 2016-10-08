@@ -23,6 +23,8 @@ extension PLMainViewController: UITableViewDataSource {
     cell.textLabel?.text = book.title
     cell.detailTextLabel?.text = book.author
     
+    cell.backgroundColor = UIColor.clear
+    
     return cell
   }
 }

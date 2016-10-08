@@ -23,6 +23,7 @@ class PLMainViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		loadData()
 	}
 	

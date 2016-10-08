@@ -9,27 +9,43 @@
 import UIKit
 import Material
 
+
+struct FormLayout {
+  struct RaisedButton {
+    static let width: CGFloat = 150
+    static let height: CGFloat = 36
+  }
+  
+  struct TextField {
+    static let height: CGFloat = 60.0
+    static let marginLeft: CGFloat = 40.0
+    static let marginRight: CGFloat = 40.0
+  }
+}
+
+
 @IBDesignable class PLNewBookFormView: UIView {
 
-  // Our custom view from the XIB file
-  private var view: UIView!
-  var titleField: TextField!
-  var authorField: TextField!
-  var publisherField: TextField!
-  var categoriesField: TextField!
+  // MARK: - Properties
+  private weak var view: UIView!
+  weak var titleField: TextField!
+  weak var authorField: TextField!
+  weak var publisherField: TextField!
+  weak var categoriesField: TextField!
+  var raisedbutton: RaisedButton!
   
-  private let textFieldHeight: CGFloat = 60.0
   
+  // MARK: - Life Cycle
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    xibSetup()
+    formViewSetup()
   }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    xibSetup()
+    formViewSetup()
   }
   
   
@@ -37,22 +53,20 @@ import Material
   
   
   
+  // MARK: - Private Functions
+  private func formViewSetup() {
+    xibSetup()
+    prepareForForm()
+    addGestureForDismissKeyboard()
+  }
   
   private func xibSetup() {
     view = loadViewFromNib()
     view.frame = bounds
-    
-    // Make the view stretch with containing view
     view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-    
+    view.backgroundColor = UIColor.white
     addSubview(view)
-    view.backgroundColor = Color.grey.lighten3
-    
-    prepareForAllTextField()
-    addGestureForDismissKeyboard()
-    
   }
-  
   
   private func loadViewFromNib() -> UIView {
     let bundle = Bundle(for: type(of: self))
@@ -62,11 +76,12 @@ import Material
     return view
   }
   
-  private func prepareForAllTextField() {
+  private func prepareForForm() {
     prepareForTitleField()
     prepareForAuthorField()
     prepareForPublisherField()
     prepareForCategoriesField()
+    prepareRaisedButton()
   }
   
   
@@ -75,7 +90,9 @@ import Material
     titleField.placeholder = "Book Title"
     titleField.textAlignment = .center
     titleField.clearButtonMode = .whileEditing
-    view.layout(titleField).top(textFieldHeight).horizontally(left: 40, right: 40)
+    view.layout(titleField)
+        .top(FormLayout.TextField.height)
+        .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
   }
   
   private func prepareForAuthorField() {
@@ -83,7 +100,9 @@ import Material
     authorField.placeholder = "Author"
     authorField.textAlignment = .center
     authorField.clearButtonMode = .whileEditing
-    view.layout(authorField).top(textFieldHeight * 2).horizontally(left: 40, right: 40)
+    view.layout(authorField)
+        .top(FormLayout.TextField.height * 2)
+        .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
   }
   
   private func prepareForPublisherField() {
@@ -91,7 +110,9 @@ import Material
     publisherField.placeholder = "Publisher"
     publisherField.textAlignment = .center
     publisherField.clearButtonMode = .whileEditing
-    view.layout(publisherField).top(textFieldHeight * 3).horizontally(left: 40, right: 40)
+    view.layout(publisherField)
+        .top(FormLayout.TextField.height * 3)
+        .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
   }
   
   private func prepareForCategoriesField() {
@@ -99,7 +120,21 @@ import Material
     categoriesField.placeholder = "Categories"
     categoriesField.textAlignment = .center
     categoriesField.clearButtonMode = .whileEditing
-    view.layout(categoriesField).top(textFieldHeight * 4).horizontally(left: 40, right: 40)
+    view.layout(categoriesField)
+        .top(FormLayout.TextField.height * 4)
+        .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
+  }
+  
+  private func prepareRaisedButton() {
+    raisedbutton = RaisedButton(title: "Submit", titleColor: Color.white)
+    raisedbutton.pulseColor = Color.white
+    raisedbutton.backgroundColor = PLColor.cleanRedColor
+    
+    view.layout(raisedbutton)
+      .width(FormLayout.RaisedButton.width)
+      .height(FormLayout.RaisedButton.height)
+      .top(FormLayout.TextField.height * 5)
+      .centerHorizontally()
   }
   
   private func addGestureForDismissKeyboard() {

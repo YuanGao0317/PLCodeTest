@@ -6,6 +6,7 @@
 //  Copyright © 2016 YuanGao. All rights reserved.
 //
 
+import Material
 
 enum API {
   static let server  = "http://prolific-interview.herokuapp.com/57f7b32592f7ad0009dc8656/"
@@ -16,6 +17,10 @@ enum API {
 enum Constants {
   static let cellReuseIdentifier = "cell"
   static let addBookSegue = "AddBookSegue"
-  
   static let PLNewBookFormView = "PLNewBookFormView"
 }
+
+struct PLColor {
+  static let cleanRedColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+}
+
