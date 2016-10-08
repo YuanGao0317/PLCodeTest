@@ -23,7 +23,7 @@ class PLAddBookViewController: UIViewController {
     view.endEditing(true)
     
     if formView.anyTextFieldNotEmpty() {
-      
+      showWarningMessage()
     } else {
       presentingViewController?.dismiss(animated: true, completion: nil)
     }
@@ -51,7 +51,7 @@ class PLAddBookViewController: UIViewController {
       snackMessage("Title and Author cannot be empty.")
     } catch {
       snackMessage("Unrecognized Error.")
-    }    
+    }
   }
   
   private func setupFormView() {
@@ -63,10 +63,27 @@ class PLAddBookViewController: UIViewController {
   
 }
 
-extension PLAddBookViewController {
+private extension PLAddBookViewController {
   func snackMessage(_ message: String) {
     let snackbar = TTGSnackbar.init(message: message, duration: .short)
     snackbar.animationType = .slideFromTopBackToTop
     snackbar.show()
+  }
+  
+  func showWarningMessage() {
+    let alertController = UIAlertController(title: "Warning",
+                                            message: "Are you sure you want to leave this page?",
+                                            preferredStyle: .alert)
+    
+    unowned let unownedSelf = self
+    let okAction = UIAlertAction(title: "Close", style: .destructive) { (action) in
+      unownedSelf.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    
+    alertController.addAction(cancelAction)
+    alertController.addAction(okAction)
+    
+    present(alertController, animated: true, completion: nil)
   }
 }
