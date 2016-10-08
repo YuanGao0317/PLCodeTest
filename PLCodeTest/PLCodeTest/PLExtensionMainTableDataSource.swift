@@ -8,20 +8,21 @@
 
 import UIKit
 
+// MARK: - UITableViewDataSource
 extension PLMainViewController: UITableViewDataSource {
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return books.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books.count
-    }
+    let book = books[(indexPath as NSIndexPath).row]
+    let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReuseIdentifier, for: indexPath)
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let book = books[(indexPath as NSIndexPath).row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReuseIdentifier, for: indexPath)
-        
-        cell.textLabel?.text = book.title
-        cell.detailTextLabel?.text = book.author
-        
-        return cell
-    }
+    cell.textLabel?.text = book.title
+    cell.detailTextLabel?.text = book.author
+    
+    return cell
+  }
 }

@@ -15,8 +15,8 @@ class PLMainViewController: UIViewController {
 	
 	var books: [PLBook] = [] {
 		didSet {
-			DispatchQueue.main.async { [weak self] in
-				self?.tableView.reloadData()
+			DispatchQueue.main.async { [unowned me = self] in
+				me.tableView.reloadData()
 			}
 		}
 	}

@@ -23,7 +23,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Add Book" id="7M5-0z-evo">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="MqF-wZ-zVA"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="MqF-wZ-zVA">
+                                            <connections>
+                                                <action selector="onDoneBtnClick:" destination="awy-hJ-Ni4" id="v5s-OV-mHN"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

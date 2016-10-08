@@ -12,10 +12,10 @@ import SwiftyJSON
 //
 import Foundation
 
-typealias done = (Result<[PLBook]>) -> Void
+typealias Done = (Result<[PLBook]>) -> Void
 //
 protocol PLAPIService {
-	func fetchBooks(_ completion: @escaping done)
+	func fetchBooks(_ completion: @escaping Done)
 //	func addBook(_ book: PLBook, completion:() -> ())
 //	func getBook(_ path: String, completion:() -> ())
 //	func updateBook(_ lastCheckedOutBy: String,
@@ -29,8 +29,14 @@ protocol PLAPIService {
 //
 final class APIServiceController: PLAPIService {
 //
-//	
-	func fetchBooks(_ completion: @escaping done) {
+//
+	lazy var defaultSession: URLSession = {
+		let defaultConfiguration = URLSessionConfiguration.default
+		let session = URLSession(configuration: defaultConfiguration)
+		return session
+	}()
+	
+	func fetchBooks(_ completion: @escaping Done) {
 //		Alamofire.request(.GET, API.books).responseJSON { (request, response, result) in
 //			
 //			switch result {
@@ -54,12 +60,13 @@ final class APIServiceController: PLAPIService {
 //			}
 //		}
 		let queue = DispatchQueue.global(qos: .background)
-		let defaultConfiguration = URLSessionConfiguration.default
-		let session = URLSession(configuration: defaultConfiguration)
+		
 		
 		queue.async(execute: {
 			if let url = URL(string: API.books) {
-				(session.dataTask(with: url) { (data, response, error) in
+				
+				unowned let unownedSelf = self
+				(unownedSelf.defaultSession.dataTask(with: url) { (data, response, error) in
 
 					var books: [PLBook] = []
 					
@@ -142,4 +149,5 @@ final class APIServiceController: PLAPIService {
 //				
 //		}
 //	}
+
 }

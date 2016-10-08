@@ -9,5 +9,8 @@
 import UIKit
 
 class PLAddBookViewController: UIViewController {
-
+  
+  @IBAction func onDoneBtnClick(_ sender: UIBarButtonItem) {
+    presentingViewController?.dismiss(animated: true, completion: nil)
+  }
 }
