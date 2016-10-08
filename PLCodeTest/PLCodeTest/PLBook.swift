@@ -5,7 +5,7 @@
 //  Created by GaoYuan on 10/7/16.
 //  Copyright © 2016 YuanGao. All rights reserved.
 //
-import SwiftyJSON
+//import SwiftyJSON
 
 struct PLBook {
     let author: String
@@ -35,14 +35,14 @@ struct PLBook {
         self.url = url
     }
     
-    init(json: JSON) {
-        self.author = json["author"].stringValue
-        self.categories = json["categories"].stringValue
-        self.lastCheckedOut = json["lastCheckedOut"].stringValue
-        self.lastCheckedOutBy = json["lastCheckedOutBy"].stringValue
-        self.publisher = json["publisher"].stringValue
-        self.title = json["title"].stringValue
-        self.url = json["url"].stringValue
-    }
+//    init(json: JSON) {
+//        self.author = json["author"].stringValue
+//        self.categories = json["categories"].stringValue
+//        self.lastCheckedOut = json["lastCheckedOut"].stringValue
+//        self.lastCheckedOutBy = json["lastCheckedOutBy"].stringValue
+//        self.publisher = json["publisher"].stringValue
+//        self.title = json["title"].stringValue
+//        self.url = json["url"].stringValue
+//    }
     
 }

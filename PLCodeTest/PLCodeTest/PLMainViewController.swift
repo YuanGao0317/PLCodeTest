@@ -16,24 +16,24 @@ class PLMainViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		loadData()
+//		loadData()
 	}
 	
-	@IBAction func onAddBtnClick(sender: UIBarButtonItem) {
+	@IBAction func onAddBtnClick(_ sender: UIBarButtonItem) {
 		
 	}
 	
 	
 	
-	private func loadData(){
-		apiService.fetchBooks { (result) -> Void in
-			do {
-				let books = try result.resolve()
-				self.books = books
-			} catch {
-				debugPrint(error)
-			}
-		}
-	}
+//	fileprivate func loadData(){
+//		apiService.fetchBooks { (result) -> Void in
+//			do {
+//				let books = try result.resolve()
+//				self.books = books
+//			} catch {
+//				debugPrint(error)
+//			}
+//		}
+//	}
 }
 

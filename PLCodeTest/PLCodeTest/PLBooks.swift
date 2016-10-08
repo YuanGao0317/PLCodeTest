@@ -12,20 +12,20 @@ final class PLBooks {
     
     lazy var apiService = APIServiceController()
     
-    private init() {}
+    fileprivate init() {}
     
     func allBooks() -> ([PLBook], String) {
         
         return ([], "")
     }
     
-    func getBook(url: String) -> (PLBook, String) {
+    func getBook(_ url: String) -> (PLBook, String) {
         let book = PLBook(author: "a", categories: "", lastCheckedOut: "", lastCheckedOutBy: "", publisher: "", title: "t", url: "")
         
         return (book, "")
     }
     
-    func updateBook(url: String) -> (PLBook, String) {
+    func updateBook(_ url: String) -> (PLBook, String) {
         let book = PLBook(author: "a", categories: "", lastCheckedOut: "", lastCheckedOutBy: "", publisher: "", title: "t", url: "")
         
         return (book, "")

@@ -23,7 +23,6 @@
 		30FEBEEE1DA814BE00B80010 /* PLAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEED1DA814BE00B80010 /* PLAPIService.swift */; };
 		30FEBEF01DA81C2900B80010 /* PLBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEEF1DA81C2900B80010 /* PLBooks.swift */; };
 		30FEBEF21DA833E900B80010 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FEBEF11DA833E900B80010 /* Default-568h@2x.png */; };
-		E850538FE028F335378AB04A /* Pods_PLCodeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EBE55E4B26BB26152B4175 /* Pods_PLCodeTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +65,6 @@
 		30FEBEED1DA814BE00B80010 /* PLAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PLAPIService.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		30FEBEEF1DA81C2900B80010 /* PLBooks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLBooks.swift; sourceTree = "<group>"; };
 		30FEBEF11DA833E900B80010 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		4C046F6925F54A3479D113B9 /* Pods-PLCodeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLCodeTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLCodeTest/Pods-PLCodeTest.release.xcconfig"; sourceTree = "<group>"; };
-		56EBE55E4B26BB26152B4175 /* Pods_PLCodeTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PLCodeTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D93B1532DF7886F520D288CE /* Pods-PLCodeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLCodeTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PLCodeTest/Pods-PLCodeTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E850538FE028F335378AB04A /* Pods_PLCodeTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,15 +92,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A230BA1C0FB1A4438F0BA7F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D93B1532DF7886F520D288CE /* Pods-PLCodeTest.debug.xcconfig */,
-				4C046F6925F54A3479D113B9 /* Pods-PLCodeTest.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		300A25A41DA85B0C007D653F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,8 +125,6 @@
 				30FEBEC81DA7F67D00B80010 /* PLCodeTestTests */,
 				30FEBED31DA7F67D00B80010 /* PLCodeTestUITests */,
 				30FEBEB21DA7F67D00B80010 /* Products */,
-				1A230BA1C0FB1A4438F0BA7F /* Pods */,
-				E0300C1A5A0769817B3C5CB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,14 +232,6 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		E0300C1A5A0769817B3C5CB4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				56EBE55E4B26BB26152B4175 /* Pods_PLCodeTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,12 +239,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30FEBED91DA7F67D00B80010 /* Build configuration list for PBXNativeTarget "PLCodeTest" */;
 			buildPhases = (
-				86758E2BFE2831E86634720D /* Check Pods Manifest.lock */,
 				30FEBEAD1DA7F67D00B80010 /* Sources */,
 				30FEBEAE1DA7F67D00B80010 /* Frameworks */,
 				30FEBEAF1DA7F67D00B80010 /* Resources */,
-				63DF678C0E030BA7CBC681CA /* Embed Pods Frameworks */,
-				E708B1FD60DAC0497BDA56CF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,18 +295,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = YuanGao;
 				TargetAttributes = {
 					30FEBEB01DA7F67D00B80010 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					30FEBEC41DA7F67D00B80010 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 30FEBEB01DA7F67D00B80010;
 					};
 					30FEBECF1DA7F67D00B80010 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 30FEBEB01DA7F67D00B80010;
 					};
 				};
@@ -385,54 +361,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		63DF678C0E030BA7CBC681CA /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLCodeTest/Pods-PLCodeTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		86758E2BFE2831E86634720D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E708B1FD60DAC0497BDA56CF /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLCodeTest/Pods-PLCodeTest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		30FEBEAD1DA7F67D00B80010 /* Sources */ = {
@@ -516,8 +444,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -539,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -560,8 +490,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -577,16 +509,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		30FEBEDA1DA7F67D00B80010 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D93B1532DF7886F520D288CE /* Pods-PLCodeTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PLCodeTest/Info.plist;
@@ -594,12 +526,12 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YuanGao.PLCodeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		30FEBEDB1DA7F67D00B80010 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C046F6925F54A3479D113B9 /* Pods-PLCodeTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PLCodeTest/Info.plist;
@@ -607,6 +539,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YuanGao.PLCodeTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -618,6 +551,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YuanGao.PLCodeTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PLCodeTest.app/PLCodeTest";
 			};
 			name = Debug;
@@ -630,6 +564,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YuanGao.PLCodeTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PLCodeTest.app/PLCodeTest";
 			};
 			name = Release;
@@ -641,6 +576,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YuanGao.PLCodeTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = PLCodeTest;
 				USES_XCTRUNNER = YES;
 			};
@@ -653,6 +589,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YuanGao.PLCodeTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = PLCodeTest;
 				USES_XCTRUNNER = YES;
 			};

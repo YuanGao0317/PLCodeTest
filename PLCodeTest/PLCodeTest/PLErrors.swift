@@ -7,19 +7,19 @@
 //
 
 enum Result<T> {
-	case Success(T)
-	case Failure(ErrorType)
+	case success(T)
+	case failure(Error)
 }
 
 extension Result {
 	func resolve() throws -> T {
 		switch self {
-		case Result.Success(let value): return value
-		case Result.Failure(let error): throw error
+		case Result.success(let value): return value
+		case Result.failure(let error): throw error
 		}
 	}
 }
 
-enum BookError: ErrorType {
-	case NoData
+enum BookError: Error {
+	case noData
 }
