@@ -21,5 +21,10 @@ extension Result {
 }
 
 enum BookError: Error {
-	case noData
+	case noData, creationFailed
+}
+
+
+enum ValidationError: Error {
+	case isEmpty
 }

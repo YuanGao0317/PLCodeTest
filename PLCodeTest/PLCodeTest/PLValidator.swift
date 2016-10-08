@@ -7,10 +7,6 @@
 //
 
 
-enum ValidationError: Error {
-  case isEmpty
-}
-
 enum Validator {
   case required
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TTGSnackbar
 
 class PLAddBookViewController: UIViewController {
   
@@ -44,9 +43,19 @@ class PLAddBookViewController: UIViewController {
                             url: ""
       )
       
-      apiService?.addBook(book, completion: {
-        
-      })
+      apiService?.addBook(book) { (result) in
+        do {
+          let _ = try result.resolve()
+          DispatchQueue.main.async { [unowned that = self] in
+            that.snackMessage("Book is created!")
+            that.resetFormTextFields()
+          }
+        } catch {
+          DispatchQueue.main.async { [unowned that = self] in
+            that.snackMessage("Failed to create book.")
+          }
+        }
+      }
     } catch ValidationError.isEmpty {
       snackMessage("Title and Author cannot be empty.")
     } catch {
@@ -61,29 +70,14 @@ class PLAddBookViewController: UIViewController {
     )
   }
   
-}
-
-private extension PLAddBookViewController {
-  func snackMessage(_ message: String) {
-    let snackbar = TTGSnackbar.init(message: message, duration: .short)
-    snackbar.animationType = .slideFromTopBackToTop
-    snackbar.show()
+  private func resetFormTextFields() {
+    view.endEditing(true)
+    formView.titleField.text = ""
+    formView.authorField.text = ""
+    formView.publisherField.text = ""
+    formView.categoriesField.text = ""
   }
   
-  func showWarningMessage() {
-    let alertController = UIAlertController(title: "Warning",
-                                            message: "Are you sure you want to leave this page?",
-                                            preferredStyle: .alert)
-    
-    unowned let unownedSelf = self
-    let okAction = UIAlertAction(title: "Close", style: .destructive) { (action) in
-      unownedSelf.presentingViewController?.dismiss(animated: true, completion: nil)
-    }
-    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-    
-    alertController.addAction(cancelAction)
-    alertController.addAction(okAction)
-    
-    present(alertController, animated: true, completion: nil)
-  }
 }
+
+
