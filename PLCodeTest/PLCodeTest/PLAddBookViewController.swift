@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TTGSnackbar
 
 class PLAddBookViewController: UIViewController {
   
@@ -21,10 +22,22 @@ class PLAddBookViewController: UIViewController {
   
   @IBAction func onDoneBtnClick(_ sender: UIBarButtonItem) {
     view.endEditing(true)
+    
+    
     presentingViewController?.dismiss(animated: true, completion: nil)
   }
   
   func buttonTapped() {
-    print("hello")
+    snackMessage("hello")
+    
+  }
+  
+}
+
+extension PLAddBookViewController {
+  func snackMessage(_ message: String) {
+    let snackbar = TTGSnackbar.init(message: message, duration: .short)
+    snackbar.animationType = .slideFromTopBackToTop
+    snackbar.show()
   }
 }
