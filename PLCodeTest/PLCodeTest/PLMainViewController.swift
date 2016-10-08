@@ -12,9 +12,9 @@ class PLMainViewController: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
 	lazy var apiService = APIServiceController()
+	
 	var books: [PLBook] = [] {
 		didSet {
-			
 			DispatchQueue.main.async { [weak self] in
 				self?.tableView.reloadData()
 			}
@@ -38,7 +38,7 @@ class PLMainViewController: UIViewController {
 				let books = try result.resolve()
 				self.books = books
 			} catch {
-//				debugPrint(error)
+				debugPrint(error)
 			}
 		}
 	}

@@ -126,7 +126,7 @@
                         <barButtonItem key="leftBarButtonItem" image="add" id="PTw-Ol-Tqn">
                             <connections>
                                 <action selector="onAddBtnClick:" destination="S2n-OV-olL" id="aXj-Ye-hhP"/>
-                                <segue destination="awy-hJ-Ni4" kind="presentation" id="nqf-F7-9cU"/>
+                                <segue destination="awy-hJ-Ni4" kind="presentation" identifier="AddBookSegue" modalTransitionStyle="crossDissolve" id="nqf-F7-9cU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
