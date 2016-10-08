@@ -12,24 +12,53 @@ import TTGSnackbar
 class PLAddBookViewController: UIViewController {
   
   @IBOutlet weak var formView: PLNewBookFormView!
-
+  var apiService: PLAPIService?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    formView.raisedbutton.addTarget(self, action: #selector(PLAddBookViewController.buttonTapped), for: .touchUpInside)
+    setupFormView()
   }
   
   @IBAction func onDoneBtnClick(_ sender: UIBarButtonItem) {
     view.endEditing(true)
     
-    
-    presentingViewController?.dismiss(animated: true, completion: nil)
+    if formView.anyTextFieldNotEmpty() {
+      
+    } else {
+      presentingViewController?.dismiss(animated: true, completion: nil)
+    }
   }
   
-  func buttonTapped() {
-    snackMessage("hello")
-    
+  func onSubmitClick() {
+    let title = formView.titleField.text ?? ""
+    let author = formView.authorField.text ?? ""
+    let publisher = formView.publisherField.text ?? ""
+    let categories = formView.categoriesField.text ?? ""
+    do {
+      let book = try PLBook(author: author,
+                            categories: categories,
+                            lastCheckedOut: "",
+                            lastCheckedOutBy: "",
+                            publisher: publisher,
+                            title: title,
+                            url: ""
+      )
+      
+      apiService?.addBook(book, completion: {
+        
+      })
+    } catch ValidationError.isEmpty {
+      snackMessage("Title and Author cannot be empty.")
+    } catch {
+      snackMessage("Unrecognized Error.")
+    }    
+  }
+  
+  private func setupFormView() {
+    formView.raisedbutton.addTarget(self,
+                                    action: #selector(PLAddBookViewController.onSubmitClick),
+                                    for: .touchUpInside
+    )
   }
   
 }

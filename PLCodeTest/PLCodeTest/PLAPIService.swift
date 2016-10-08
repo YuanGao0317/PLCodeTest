@@ -16,7 +16,7 @@ typealias Done = (Result<[PLBook]>) -> Void
 //
 protocol PLAPIService {
 	func fetchBooks(_ completion: @escaping Done)
-//	func addBook(_ book: PLBook, completion:() -> ())
+	func addBook(_ book: PLBook, completion:() -> ())
 //	func getBook(_ path: String, completion:() -> ())
 //	func updateBook(_ lastCheckedOutBy: String,
 //		lastCheckedOut: String,
@@ -92,13 +92,13 @@ final class APIServiceController: PLAPIService {
 		})
 	}
 //
-//	func addBook(_ book: PLBook, completion:() -> ()) {
-//		let parameters : [String:AnyObject] = [
-//			"author": book.author as AnyObject,
-//			"categories": book.categories as AnyObject,
-//			"title": book.title as AnyObject,
-//			"publisher": book.publisher as AnyObject
-//		]
+	func addBook(_ book: PLBook, completion:() -> ()) {
+		let parameters : [String:AnyObject] = [
+			"author": book.author as AnyObject,
+			"categories": book.categories as AnyObject,
+			"title": book.title as AnyObject,
+			"publisher": book.publisher as AnyObject
+		]
 //		Alamofire.request(.POST, API.books,
 //			parameters: parameters,
 //			encoding: .JSON
@@ -107,8 +107,8 @@ final class APIServiceController: PLAPIService {
 //			.response { (request, response, data, error) in
 //				debugPrint("Book created: \(data)")
 //		}
-//	}
-//	
+	}
+//
 //	func getBook(_ path: String, completion:() -> ()) {
 //		let requestURL = API.server + path
 //		Alamofire.request(.GET, requestURL).responseJSON { response in

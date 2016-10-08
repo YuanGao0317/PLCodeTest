@@ -14,21 +14,21 @@ final class PLBooks {
     
     private init() {}
     
-    func allBooks() -> ([PLBook], String) {
-        
-        return ([], "")
-    }
-    
-    func getBook(_ url: String) -> (PLBook, String) {
-        let book = PLBook(author: "a", categories: "", lastCheckedOut: "", lastCheckedOutBy: "", publisher: "", title: "t", url: "")
-        
-        return (book, "")
-    }
-    
-    func updateBook(_ url: String) -> (PLBook, String) {
-        let book = PLBook(author: "a", categories: "", lastCheckedOut: "", lastCheckedOutBy: "", publisher: "", title: "t", url: "")
-        
-        return (book, "")
-    }
-    
+//    func allBooks() -> ([PLBook], String) {
+//        
+//        return ([], "")
+//    }
+//    
+//    func getBook(_ url: String) -> (PLBook, String) {
+//        let book = PLBook(author: "a", categories: "", lastCheckedOut: "", lastCheckedOutBy: "", publisher: "", title: "t", url: "")
+//        
+//        return (book, "")
+//    }
+//    
+//    func updateBook(_ url: String) -> (PLBook, String) {
+//        let book = PLBook(author: "a", categories: "", lastCheckedOut: "", lastCheckedOutBy: "", publisher: "", title: "t", url: "")
+//        
+//        return (book, "")
+//    }
+  
 }

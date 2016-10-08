@@ -25,7 +25,7 @@ struct FormLayout {
 
 
 @IBDesignable class PLNewBookFormView: UIView {
-
+  
   // MARK: - Properties
   private weak var view: UIView!
   weak var titleField: TextField!
@@ -48,7 +48,12 @@ struct FormLayout {
     formViewSetup()
   }
   
-  
+  func anyTextFieldNotEmpty() -> Bool {
+    return (titleField.text != "" ||
+            authorField.text != "" ||
+            publisherField.text != "" ||
+            categoriesField.text != "")
+  }
   
   
   
@@ -91,8 +96,8 @@ struct FormLayout {
     titleField.textAlignment = .center
     titleField.clearButtonMode = .whileEditing
     view.layout(titleField)
-        .top(FormLayout.TextField.height)
-        .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
+      .top(FormLayout.TextField.height)
+      .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
   }
   
   private func prepareForAuthorField() {
@@ -101,8 +106,8 @@ struct FormLayout {
     authorField.textAlignment = .center
     authorField.clearButtonMode = .whileEditing
     view.layout(authorField)
-        .top(FormLayout.TextField.height * 2)
-        .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
+      .top(FormLayout.TextField.height * 2)
+      .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
   }
   
   private func prepareForPublisherField() {
@@ -111,8 +116,8 @@ struct FormLayout {
     publisherField.textAlignment = .center
     publisherField.clearButtonMode = .whileEditing
     view.layout(publisherField)
-        .top(FormLayout.TextField.height * 3)
-        .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
+      .top(FormLayout.TextField.height * 3)
+      .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
   }
   
   private func prepareForCategoriesField() {
@@ -121,8 +126,8 @@ struct FormLayout {
     categoriesField.textAlignment = .center
     categoriesField.clearButtonMode = .whileEditing
     view.layout(categoriesField)
-        .top(FormLayout.TextField.height * 4)
-        .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
+      .top(FormLayout.TextField.height * 4)
+      .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
   }
   
   private func prepareRaisedButton() {
