@@ -1,12 +1,15 @@
 PODS:
+  - Material (2.1.0)
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
+  - Material (~> 2.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Material: c5c334bd7fa8c0307cb35be143b7c51c5e2c52a7
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 9872a49fb9fd3574caf599bc814fbf1ca2e0cd4e
+PODFILE CHECKSUM: d708dbf1a5bb69e23df6d26e961d4b1286587491
 
 COCOAPODS: 1.1.0.rc.2
