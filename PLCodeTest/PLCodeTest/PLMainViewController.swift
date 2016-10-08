@@ -11,12 +11,19 @@ import UIKit
 class PLMainViewController: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
-//	lazy var apiService = APIServiceController()
-	var books: [PLBook] = [] { didSet { tableView.reloadData() } }
+	lazy var apiService = APIServiceController()
+	var books: [PLBook] = [] {
+		didSet {
+			
+			DispatchQueue.main.async { [weak self] in
+				self?.tableView.reloadData()
+			}
+		}
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-//		loadData()
+		loadData()
 	}
 	
 	@IBAction func onAddBtnClick(_ sender: UIBarButtonItem) {
@@ -25,15 +32,15 @@ class PLMainViewController: UIViewController {
 	
 	
 	
-//	fileprivate func loadData(){
-//		apiService.fetchBooks { (result) -> Void in
-//			do {
-//				let books = try result.resolve()
-//				self.books = books
-//			} catch {
+	private func loadData(){
+		apiService.fetchBooks { (result) -> Void in
+			do {
+				let books = try result.resolve()
+				self.books = books
+			} catch {
 //				debugPrint(error)
-//			}
-//		}
-//	}
+			}
+		}
+	}
 }
 

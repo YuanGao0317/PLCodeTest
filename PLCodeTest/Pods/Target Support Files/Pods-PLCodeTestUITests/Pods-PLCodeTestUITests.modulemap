@@ -1,0 +1,6 @@
+framework module Pods_PLCodeTestUITests {
+  umbrella header "Pods-PLCodeTestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,7 +7,7 @@
 ////
 //
 //import Alamofire
-//import SwiftyJSON
+import SwiftyJSON
 //
 //
 import Foundation
@@ -53,33 +53,36 @@ final class APIServiceController: PLAPIService {
 //				completion( Result.Failure(error.1) )
 //			}
 //		}
+		let queue = DispatchQueue.global(qos: .background)
 		let defaultConfiguration = URLSessionConfiguration.default
 		let session = URLSession(configuration: defaultConfiguration)
 		
-		if let url = URL(string: API.books) {
-			(session.dataTask(with: url) { (data, response, error) in
+		queue.async(execute: {
+			if let url = URL(string: API.books) {
+				(session.dataTask(with: url) { (data, response, error) in
 
-				var books: [PLBook] = []
-				
-				if let error = error {
-					return completion( Result.failure(error) )
-				}
-				guard let data = data else {
-					return completion( Result.failure(BookError.noData) )
-				}
-				
-				let booksJSONData = JSON(data:data)
-				if let arr = booksJSONData.array {
-					for bookJSON in arr {
-						books.append( PLBook(json: bookJSON) )
+					var books: [PLBook] = []
+					
+					if let error = error {
+						return completion( Result.failure(error) )
 					}
-				} else {
-					return completion( Result.failure(BookError.noData) )
-				}
-				
-				completion( Result.success(books) )
-				}).resume()
-		}
+					guard let data = data else {
+						return completion( Result.failure(BookError.noData) )
+					}
+					
+					let booksJSONData = JSON(data:data)
+					if let arr = booksJSONData.array {
+						for bookJSON in arr {
+							books.append( PLBook(json: bookJSON) )
+						}
+					} else {
+						return completion( Result.failure(BookError.noData) )
+					}
+					
+					completion( Result.success(books) )
+					}).resume()
+			}
+		})
 	}
 //
 //	func addBook(_ book: PLBook, completion:() -> ()) {
@@ -139,4 +142,4 @@ final class APIServiceController: PLAPIService {
 //				
 //		}
 //	}
-//}
+}
