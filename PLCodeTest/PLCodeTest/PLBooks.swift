@@ -10,7 +10,7 @@
 final class PLBooks {
     static let sharedInstance = PLBooks()
     
-    lazy var apiService = APIServiceController()
+//    lazy var apiService = APIServiceController()
     
     fileprivate init() {}
     

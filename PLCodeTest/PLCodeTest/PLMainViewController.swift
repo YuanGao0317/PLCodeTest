@@ -11,7 +11,7 @@ import UIKit
 class PLMainViewController: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
-	lazy var apiService = APIServiceController()
+//	lazy var apiService = APIServiceController()
 	var books: [PLBook] = [] { didSet { tableView.reloadData() } }
 	
 	override func viewDidLoad() {

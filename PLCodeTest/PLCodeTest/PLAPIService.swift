@@ -10,10 +10,12 @@
 //import SwiftyJSON
 //
 //
-//typealias done = (Result<[PLBook]>) -> Void
+import Foundation
+
+typealias done = (Result<[PLBook]>) -> Void
 //
-//protocol PLAPIService {
-//	func fetchBooks(_ completion: done)
+protocol PLAPIService {
+	func fetchBooks(_ completion: @escaping done)
 //	func addBook(_ book: PLBook, completion:() -> ())
 //	func getBook(_ path: String, completion:() -> ())
 //	func updateBook(_ lastCheckedOutBy: String,
@@ -23,63 +25,63 @@
 //	)
 //	func deleteBook(_ path: String, completion:() -> ())
 //	func deleteBooks(_ completion:() -> ())
-//}
+}
 //
-//final class APIServiceController: PLAPIService {
+final class APIServiceController: PLAPIService {
+//
 //	
-//	
-//	func fetchBooks(_ completion: @escaping done) {
-////		Alamofire.request(.GET, API.books).responseJSON { (request, response, result) in
-////			
-////			switch result {
-////			case .Success(let data):
-////				var books: [PLBook] = []
-////				let booksJSONData = JSON(data)
-////				
-////				if let arr = booksJSONData.array {
-////					
-////					for bookJSON in arr {
-////						books.append(PLBook(json: bookJSON))
-////					}
-////					
-////					completion( Result.Success(books) )
-////				}else {
-////					completion( Result.Failure(BookError.NoData) )
-////				}
-////				
-////			case .Failure(let error):
-////				completion( Result.Failure(error.1) )
-////			}
-////		}
-//		let defaultConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-//		let session = NSURLSession(configuration: defaultConfiguration)
-//		
-//		if let url = NSURL(string: API.books) {
-//			(session.dataTaskWithURL(url) { (data, response, error) in
-//				
+	func fetchBooks(_ completion: @escaping done) {
+//		Alamofire.request(.GET, API.books).responseJSON { (request, response, result) in
+//			
+//			switch result {
+//			case .Success(let data):
 //				var books: [PLBook] = []
+//				let booksJSONData = JSON(data)
 //				
-//				if let error = error {
-//					return completion( Result.Failure(error) )
-//				}
-//				guard let data = data else {
-//					return completion( Result.Failure(BookError.NoData) )
-//				}
-//				
-//				let booksJSONData = JSON(data:data)
 //				if let arr = booksJSONData.array {
+//					
 //					for bookJSON in arr {
-//						books.append( PLBook(json: bookJSON) )
+//						books.append(PLBook(json: bookJSON))
 //					}
-//				} else {
-//					return completion( Result.Failure(BookError.NoData) )
+//					
+//					completion( Result.Success(books) )
+//				}else {
+//					completion( Result.Failure(BookError.NoData) )
 //				}
 //				
-//				completion( Result.Success(books) )
-//				}).resume()
+//			case .Failure(let error):
+//				completion( Result.Failure(error.1) )
+//			}
 //		}
-//	}
-//	
+		let defaultConfiguration = URLSessionConfiguration.default
+		let session = URLSession(configuration: defaultConfiguration)
+		
+		if let url = URL(string: API.books) {
+			(session.dataTask(with: url) { (data, response, error) in
+
+				var books: [PLBook] = []
+				
+				if let error = error {
+					return completion( Result.failure(error) )
+				}
+				guard let data = data else {
+					return completion( Result.failure(BookError.noData) )
+				}
+				
+				let booksJSONData = JSON(data:data)
+				if let arr = booksJSONData.array {
+					for bookJSON in arr {
+						books.append( PLBook(json: bookJSON) )
+					}
+				} else {
+					return completion( Result.failure(BookError.noData) )
+				}
+				
+				completion( Result.success(books) )
+				}).resume()
+		}
+	}
+//
 //	func addBook(_ book: PLBook, completion:() -> ()) {
 //		let parameters : [String:AnyObject] = [
 //			"author": book.author as AnyObject,
