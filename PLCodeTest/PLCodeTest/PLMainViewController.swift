@@ -16,7 +16,7 @@ class PLMainViewController: UIViewController {
 	var books: [PLBook] = [] {
 		didSet {
 			DispatchQueue.main.async { [unowned me = self] in
-				me.tableView.reloadSections([0], with: .left)
+				me.tableView.reloadSections([0], with: .fade)
 			}
 		}
 	}

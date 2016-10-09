@@ -56,7 +56,12 @@ private struct FormLayout {
             categoriesField.text != "")
   }
   
-  
+  func resetTextFields() {
+    titleField.text = ""
+    authorField.text = ""
+    publisherField.text = ""
+    categoriesField.text = ""
+  }
   
   
   // MARK: - Private Functions
@@ -134,7 +139,7 @@ private struct FormLayout {
   private func prepareRaisedButton() {
     raisedbutton = RaisedButton(title: "Submit", titleColor: Color.white)
     raisedbutton.pulseColor = Color.white
-    raisedbutton.backgroundColor = PLColor.cleanRedColor
+    raisedbutton.backgroundColor = PLColor.cleanRed
     
     view.layout(raisedbutton)
       .width(FormLayout.RaisedButton.width)

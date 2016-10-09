@@ -75,10 +75,7 @@ class PLAddBookViewController: UIViewController {
   
   private func resetFormTextFields() {
     view.endEditing(true)
-    formView.titleField.text = ""
-    formView.authorField.text = ""
-    formView.publisherField.text = ""
-    formView.categoriesField.text = ""
+    formView.resetTextFields()
   }
   
 }

@@ -19,11 +19,13 @@ enum API {
 enum Constants {
   static let cellReuseIdentifier = "cell"
   static let addBookSegue = "AddBookSegue"
+  static let showBookSegue = "ShowBookDetailSegue"
   static let PLNewBookFormView = "PLNewBookFormView"
 }
 
 // MARK: - Colors
 struct PLColor {
-  static let cleanRedColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+  static let cleanRed = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+  static let white = UIColor.white
 }
 
