@@ -10,9 +10,9 @@ import Material
 
 // MARK: - API Constants
 enum API {
-  static let server  = "http://prolific-interview.herokuapp.com/57f7b32592f7ad0009dc8656/"
-  static let books = server + "books/"
-  static let cleanBooks = server + "clean/"
+  static let server  = "http://prolific-interview.herokuapp.com/57f7b32592f7ad0009dc8656"
+  static let books = server + "/books/"
+  static let cleanBooks = server + "/clean/"
 }
 
 // MARK: - Global Constants

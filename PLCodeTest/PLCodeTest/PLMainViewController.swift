@@ -65,8 +65,7 @@ class PLMainViewController: UIViewController {
 		}
 	}
 	
-	// MARK: - Private
-	private func loadData(){
+	func loadData(){
 		apiService.fetchBooks { (result) -> Void in
 			do {
 				let books = try result.resolve()
@@ -77,6 +76,7 @@ class PLMainViewController: UIViewController {
 		}
 	}
 	
+	// MARK: - Private
 	private func deleteAllBooks() {
 		apiService.deleteBooks { (success) in
 			if success {

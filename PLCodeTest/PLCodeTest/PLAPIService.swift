@@ -12,7 +12,7 @@ import SwiftyJSON
 // MARK: - Callback Type
 typealias FetchDone = (Result<[PLBook]>) -> Void
 typealias AddDone = (Result<PLBook>) -> Void
-typealias DeleteAllDone = (Bool) -> Void
+typealias DeleteDone = (Bool) -> Void
 
 // MARK: - Protocol
 protocol PLAPIService {
@@ -24,8 +24,8 @@ protocol PLAPIService {
 	//		path: String,
 	//		completion:() -> ()
 	//	)
-	func deleteBook(_ path: String, completion:() -> ())
-	func deleteBooks(_ completion: @escaping DeleteAllDone)
+	func deleteBook(_ path: String, completion: @escaping DeleteDone)
+	func deleteBooks(_ completion: @escaping DeleteDone)
 }
 
 
@@ -132,13 +132,34 @@ final class APIServiceController: PLAPIService {
 	//	}
 	
 	// MARK: - Delete a book
-	func deleteBook(_ path: String, completion:() -> ()) {
-//		let url = API.server + path
+	func deleteBook(_ path: String, completion: @escaping DeleteDone) {
+		let url = API.server + path
+		
+		let queue = DispatchQueue.global(qos: .background)
+		
+		unowned let unownedSelf = self
+		queue.async(execute: {
+			if let url: URL = URL(string: url) {
+				var request = URLRequest(url: url)
+				request.httpMethod = "DELETE"
+				request.timeoutInterval = 10
+				
+				(unownedSelf.defaultSession.dataTask(with: request) {
+					(data, response, error) in
+					if let _ = error {
+						return completion(false)
+					}
+					
+					completion(true)
+				}).resume()
+			}
+		})
+
 		
 	}
 	
 	// MARK: - Delete all books
-	func deleteBooks(_ completion: @escaping DeleteAllDone) {
+	func deleteBooks(_ completion: @escaping DeleteDone) {
 		let queue = DispatchQueue.global(qos: .background)
 		
 		unowned let unownedSelf = self
