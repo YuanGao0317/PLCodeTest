@@ -17,6 +17,7 @@ class PLMainViewController: UIViewController {
 		didSet {
 			DispatchQueue.main.async { [unowned me = self] in
 				me.tableView.reloadData()
+				me.tableView.reloadRows(at: me.tableView.indexPathsForVisibleRows!, with: .right)
 			}
 		}
 	}
@@ -30,14 +31,23 @@ class PLMainViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		
 		loadData()
 	}
 	
 	// MARK: - Event Responses
   @IBAction func onDeleteAllBtnClick(_ sender: UIBarButtonItem) {
+		guard self.books.count > 0 else {
+			MessageController.snackMessage("There is no book.")
+			return
+		}
+		
     apiService.deleteBooks { (success) in
 			if success {
 				self.books = []
+				DispatchQueue.main.async {
+					MessageController.snackMessage("All books are deleted!")
+				}
 			} else {
 				DispatchQueue.main.async {
 					MessageController.snackMessage("Failed to delete all books.")

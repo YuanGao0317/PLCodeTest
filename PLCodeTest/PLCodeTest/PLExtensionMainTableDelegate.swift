@@ -13,6 +13,6 @@ extension PLMainViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     print((indexPath as NSIndexPath).row)
-    
   }
+
 }
