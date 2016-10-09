@@ -16,7 +16,7 @@ class PLMainViewController: UIViewController {
 	var books: [PLBook] = [] {
 		didSet {
 			DispatchQueue.main.async { [unowned me = self] in
-				me.tableView.reloadSections([0], with: .fade)
+				me.tableView.reloadSections([0], with: .left)
 			}
 		}
 	}
@@ -94,7 +94,8 @@ class PLMainViewController: UIViewController {
 		                                        preferredStyle: .alert)
 		
 		unowned let unownedSelf = self
-		let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+		let deleteAction = UIAlertAction(title: "Delete", style: .destructive) {
+			(action) in
 			unownedSelf.deleteAllBooks()
 		}
 		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
