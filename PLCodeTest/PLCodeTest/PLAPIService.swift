@@ -10,8 +10,8 @@
 import SwiftyJSON
 
 // MARK: - Callback Type
-typealias FetchDone = (Result<[PLBook]>) -> Void
-typealias AddDone = (Result<PLBook>) -> Void
+typealias FetchDone = (PLResult<[PLBook]>) -> Void
+typealias AddDone = (PLResult<PLBook>) -> Void
 typealias DeleteDone = (Bool) -> Void
 
 // MARK: - Protocol
@@ -30,9 +30,9 @@ protocol PLAPIService {
 
 
 final class APIServiceController: PLAPIService {
-	
+
 	// MARK: - Properties
-	lazy var defaultSession: URLSession = {
+	private lazy var defaultSession: URLSession = {
 		let defaultConfiguration = URLSessionConfiguration.default
 		let session = URLSession(configuration: defaultConfiguration)
 		return session
@@ -52,10 +52,10 @@ final class APIServiceController: PLAPIService {
 					var books: [PLBook] = []
 					
 					if let error = error {
-						return completion( Result.failure(error) )
+						return completion( PLResult.failure(error) )
 					}
 					guard let data = data else {
-						return completion( Result.failure(BookError.noData) )
+						return completion( PLResult.failure(PLBookError.noData) )
 					}
 					
 					let booksJSONData = JSON(data:data)
@@ -64,10 +64,10 @@ final class APIServiceController: PLAPIService {
 							books.append( PLBook(json: bookJSON) )
 						}
 					} else {
-						return completion( Result.failure(BookError.creationFailed) )
+						return completion( PLResult.failure(PLBookError.creationFailed) )
 					}
 					
-					completion( Result.success(books) )
+					completion( PLResult.success(books) )
 				}).resume()
 			}
 		})
@@ -93,15 +93,15 @@ final class APIServiceController: PLAPIService {
 			(data, response, error) in
 			
 			if let error = error {
-				return completion( Result.failure(error) )
+				return completion( PLResult.failure(error) )
 			}
 			guard let data = data else {
-				return completion( Result.failure(BookError.noData) )
+				return completion( PLResult.failure(PLBookError.noData) )
 			}
 			
 			let bookJSONData = JSON(data:data)
 			let book = PLBook(json: bookJSONData)
-			completion( Result.success(book) )
+			completion( PLResult.success(book) )
 			
 		}
 		task.resume()

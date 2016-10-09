@@ -7,11 +7,11 @@
 //
 
 
-enum Validator {
+enum PLValidator {
   case required
 }
 
-extension Validator {
+extension PLValidator {
   func isValid(_ attrs: [String]) -> Bool {
     switch self {
     case .required:

@@ -30,10 +30,10 @@ struct PLBook {
   {
     
     guard
-      Validator
+      PLValidator
         .required
         .isValid([title, author])
-      else { throw ValidationError.isEmpty
+      else { throw PLValidationError.isEmpty
     }
     
     self.id = nil

@@ -10,7 +10,8 @@ import UIKit
 
 class PLBookDetailViewController: UIViewController {
   
-  var book: PLBook?
+  var book: PLBook!
+  var apiService: PLAPIService!
   
   @IBOutlet weak var bookDetailView: PLBookDetailView!
   

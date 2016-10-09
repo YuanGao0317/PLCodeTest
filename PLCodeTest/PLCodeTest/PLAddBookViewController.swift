@@ -12,10 +12,11 @@ class PLAddBookViewController: UIViewController {
   
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var formView: PLNewBookFormView!
-  var apiService: PLAPIService?
+  var apiService: PLAPIService!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     setupFormView()
   }
   
@@ -44,7 +45,7 @@ class PLAddBookViewController: UIViewController {
                             url: ""
       )
       activityIndicator.startAnimating()
-      apiService?.addBook(book) { (result) in
+      apiService.addBook(book) { (result) in
         do {
           let _ = try result.resolve()
           DispatchQueue.main.async { [unowned that = self] in
@@ -59,7 +60,7 @@ class PLAddBookViewController: UIViewController {
           }
         }
       }
-    } catch ValidationError.isEmpty {
+    } catch PLValidationError.isEmpty {
       MessageController.snackMessage("Title and Author cannot be empty.")
     } catch {
       MessageController.snackMessage("Unrecognized Error.")

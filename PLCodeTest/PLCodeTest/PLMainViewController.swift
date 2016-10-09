@@ -11,7 +11,7 @@ import UIKit
 class PLMainViewController: UIViewController {
 	// MARK: - Properties
 	@IBOutlet weak var tableView: UITableView!
-	lazy var apiService = APIServiceController()
+	lazy var apiService: PLAPIService = APIServiceController()
 	
 	var books: [PLBook] = [] {
 		didSet {
@@ -24,7 +24,7 @@ class PLMainViewController: UIViewController {
 	// MARK: - Life Cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+
 		loadData()
 	}
 	
@@ -66,6 +66,7 @@ class PLMainViewController: UIViewController {
 						let indexPath = sender as? IndexPath
 				{
 					bookDetailVC.book = books[indexPath.row]
+					bookDetailVC.apiService = APIServiceController()
 				}
 			default: break
 			}

@@ -7,26 +7,26 @@
 //
 
 // MARK: - Result
-enum Result<T> {
+enum PLResult<T> {
 	case success(T)
 	case failure(Error)
 }
 
-extension Result {
+extension PLResult {
 	func resolve() throws -> T {
 		switch self {
-		case Result.success(let value): return value
-		case Result.failure(let error): throw error
+		case PLResult.success(let value): return value
+		case PLResult.failure(let error): throw error
 		}
 	}
 }
 
 // MARK: - Book Error
-enum BookError: Error {
+enum PLBookError: Error {
 	case noData, creationFailed
 }
 
 // MARK: - Validation Error
-enum ValidationError: Error {
+enum PLValidationError: Error {
 	case isEmpty
 }

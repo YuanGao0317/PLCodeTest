@@ -23,15 +23,16 @@ import UIKit
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    formViewSetup()
+    showViewSetup()
   }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    formViewSetup()
+    showViewSetup()
   }
   
+  // MARK: - Functions
   func setFormContent(title: String,
                       author: String,
                       publisher: String,
@@ -45,12 +46,13 @@ import UIKit
     lastCheckedOutLabel.text = lastCheckedOut
   }
   
-  func formatLastCheckedOut(with lastCheckedOut: String, and lastCheckedOutBy: String) -> String {
+  static func formatLastCheckedOut(with lastCheckedOut: String, and lastCheckedOutBy: String) -> String {
     
     return ""
   }
   
-  private func formViewSetup() {
+  // MARK: - Privatess
+  private func showViewSetup() {
     xibSetup()
   }
   
