@@ -25,13 +25,13 @@ class PLMainViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-//		loadData()
+		loadData()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
-//		loadData()
+		loadData()
 	}
 	
 	// MARK: - Event Responses
@@ -54,13 +54,20 @@ class PLMainViewController: UIViewController {
 			destination = navCon.visibleViewController!
 		}
 		
-		if let addBookVC = destination as? PLAddBookViewController {
-			if let identifier = segue.identifier {
-				switch identifier {
-				case Constants.addBookSegue:
+		
+		if let identifier = segue.identifier {
+			switch identifier {
+			case Constants.addBookSegue:
+				if let addBookVC = destination as? PLAddBookViewController {
 					addBookVC.apiService = APIServiceController()
-				default: debugPrint("no indentifier")
 				}
+			case Constants.showBookSegue:
+				if let bookDetailVC = destination as? PLBookDetailViewController,
+						let indexPath = sender as? IndexPath
+				{
+					bookDetailVC.book = books[indexPath.row]
+				}
+			default: break
 			}
 		}
 	}

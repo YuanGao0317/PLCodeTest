@@ -149,25 +149,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TG1-zD-m5v" customClass="PLBookDetailView" customModule="PLCodeTest" customModuleProvider="target">
-                                <frame key="frameInset" minY="94" width="375" height="478"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TG1-zD-m5v" customClass="PLBookDetailView" customModule="PLCodeTest" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.81916015624999994" green="0.81916015624999994" blue="0.81916015624999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TG1-zD-m5v" firstAttribute="bottom" secondItem="BIT-vr-4xU" secondAttribute="top" id="8Tr-pu-tTq"/>
+                            <constraint firstItem="TG1-zD-m5v" firstAttribute="top" secondItem="4q3-O6-iZz" secondAttribute="bottom" id="GRP-Oy-egX"/>
+                            <constraint firstAttribute="trailing" secondItem="TG1-zD-m5v" secondAttribute="trailing" id="QJS-Jf-0wU"/>
+                            <constraint firstItem="TG1-zD-m5v" firstAttribute="leading" secondItem="Wkk-c7-Jxq" secondAttribute="leading" id="fdd-6A-qIf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bookDetailView" destination="TG1-zD-m5v" id="XxF-tH-vIh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEY-62-6HP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3600.8000000000002" y="292.80359820089956"/>
+            <point key="canvasLocation" x="3277.5999999999999" y="292.80359820089956"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BFh-NM-7pX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dcQ-rA-5Yd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bF1-Pv-SQx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bF1-Pv-SQx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

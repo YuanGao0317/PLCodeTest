@@ -12,6 +12,11 @@ import UIKit
 
   // MARK: - Properties
   private weak var view: UIView!
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var authorLabel: UILabel!
+  @IBOutlet weak var publisherLabel: UILabel!
+  @IBOutlet weak var categoriesLabel: UILabel!
+  @IBOutlet weak var lastCheckedOutLabel: UILabel!
 
   
   // MARK: - Life Cycle
@@ -27,6 +32,24 @@ import UIKit
     formViewSetup()
   }
   
+  func setFormContent(title: String,
+                      author: String,
+                      publisher: String,
+                      categories: String,
+                      lastCheckedOut: String)
+  {
+    titleLabel.text = title
+    authorLabel.text = author
+    publisherLabel.text = publisher
+    categoriesLabel.text = categories
+    lastCheckedOutLabel.text = lastCheckedOut
+  }
+  
+  func formatLastCheckedOut(with lastCheckedOut: String, and lastCheckedOutBy: String) -> String {
+    
+    return ""
+  }
+  
   private func formViewSetup() {
     xibSetup()
   }
@@ -35,13 +58,13 @@ import UIKit
     view = loadViewFromNib()
     view.frame = bounds
     view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-    view.backgroundColor = UIColor.purple
+    view.backgroundColor = UIColor.clear
     addSubview(view)
   }
   
   private func loadViewFromNib() -> UIView {
     let bundle = Bundle(for: type(of: self))
-    let nib = UINib(nibName: Constants.PLNewBookFormView, bundle: bundle)
+    let nib = UINib(nibName: Constants.PLBookDetailView, bundle: bundle)
     let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
     
     return view

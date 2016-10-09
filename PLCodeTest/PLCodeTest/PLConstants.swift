@@ -21,6 +21,7 @@ enum Constants {
   static let addBookSegue = "AddBookSegue"
   static let showBookSegue = "ShowBookDetailSegue"
   static let PLNewBookFormView = "PLNewBookFormView"
+  static let PLBookDetailView = "PLBookDetailView"
 }
 
 // MARK: - Colors
