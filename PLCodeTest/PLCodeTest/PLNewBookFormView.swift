@@ -17,7 +17,8 @@ private struct FormLayout {
   }
   
   struct TextField {
-    static let height: CGFloat = 60.0
+    static let height: CGFloat = 40.0
+    static let marginTop: CGFloat = 28.0
     static let marginLeft: CGFloat = 40.0
     static let marginRight: CGFloat = 40.0
   }
@@ -102,7 +103,8 @@ private struct FormLayout {
     titleField.textAlignment = .center
     titleField.clearButtonMode = .whileEditing
     view.layout(titleField)
-      .top(FormLayout.TextField.height)
+      .height(FormLayout.TextField.height)
+      .top(FormLayout.TextField.marginTop)
       .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
   }
   
@@ -112,7 +114,8 @@ private struct FormLayout {
     authorField.textAlignment = .center
     authorField.clearButtonMode = .whileEditing
     view.layout(authorField)
-      .top(FormLayout.TextField.height * 2)
+      .height(FormLayout.TextField.height)
+      .top(FormLayout.TextField.marginTop*2 + FormLayout.TextField.height)
       .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
   }
   
@@ -122,7 +125,8 @@ private struct FormLayout {
     publisherField.textAlignment = .center
     publisherField.clearButtonMode = .whileEditing
     view.layout(publisherField)
-      .top(FormLayout.TextField.height * 3)
+      .height(FormLayout.TextField.height)
+      .top(FormLayout.TextField.marginTop*3 + FormLayout.TextField.height*2)
       .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
   }
   
@@ -132,7 +136,8 @@ private struct FormLayout {
     categoriesField.textAlignment = .center
     categoriesField.clearButtonMode = .whileEditing
     view.layout(categoriesField)
-      .top(FormLayout.TextField.height * 4)
+      .height(FormLayout.TextField.height)
+      .top(FormLayout.TextField.marginTop*4 + FormLayout.TextField.height*3)
       .horizontally(left: FormLayout.TextField.marginLeft, right: FormLayout.TextField.marginRight)
   }
   
@@ -144,7 +149,7 @@ private struct FormLayout {
     view.layout(raisedbutton)
       .width(FormLayout.RaisedButton.width)
       .height(FormLayout.RaisedButton.height)
-      .top(FormLayout.TextField.height * 5)
+      .top(FormLayout.TextField.marginTop*5 + FormLayout.TextField.height*4)
       .centerHorizontally()
   }
   

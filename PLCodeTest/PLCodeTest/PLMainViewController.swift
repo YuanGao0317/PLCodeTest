@@ -25,13 +25,13 @@ class PLMainViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		loadData()
+//		loadData()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
-		loadData()
+//		loadData()
 	}
 	
 	// MARK: - Event Responses
