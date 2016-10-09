@@ -6,6 +6,7 @@
 //  Copyright © 2016 YuanGao. All rights reserved.
 //
 
+// MARK: - Result
 enum Result<T> {
 	case success(T)
 	case failure(Error)
@@ -20,11 +21,12 @@ extension Result {
 	}
 }
 
+// MARK: - Book Error
 enum BookError: Error {
 	case noData, creationFailed
 }
 
-
+// MARK: - Validation Error
 enum ValidationError: Error {
 	case isEmpty
 }

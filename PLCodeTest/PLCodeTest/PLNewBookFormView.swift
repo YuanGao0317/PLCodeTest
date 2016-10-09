@@ -9,8 +9,8 @@
 import UIKit
 import Material
 
-
-struct FormLayout {
+// MARK: - Constants
+private struct FormLayout {
   struct RaisedButton {
     static let width: CGFloat = 150
     static let height: CGFloat = 36
@@ -48,6 +48,7 @@ struct FormLayout {
     formViewSetup()
   }
   
+  // MARK: - Methods
   func anyTextFieldNotEmpty() -> Bool {
     return (titleField.text != "" ||
             authorField.text != "" ||

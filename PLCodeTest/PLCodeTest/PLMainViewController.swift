@@ -9,7 +9,7 @@
 import UIKit
 
 class PLMainViewController: UIViewController {
-	
+	// MARK: - Properties
 	@IBOutlet weak var tableView: UITableView!
 	lazy var apiService = APIServiceController()
 	
@@ -21,11 +21,17 @@ class PLMainViewController: UIViewController {
 		}
 	}
 	
+	// MARK: - Life Cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		loadData()
 	}
+	
+	// MARK: - Event Responses
+  @IBAction func onDeleteAllBtnClick(_ sender: UIBarButtonItem) {
+    
+  }
 	
 	@IBAction func onAddBtnClick(_ sender: UIBarButtonItem) {
 		performSegue(withIdentifier: Constants.addBookSegue, sender: self)
@@ -48,6 +54,7 @@ class PLMainViewController: UIViewController {
 		}
 	}
 	
+	// MARK: - Private
 	private func loadData(){
 		apiService.fetchBooks { (result) -> Void in
 			do {

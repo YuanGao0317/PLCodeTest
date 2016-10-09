@@ -120,6 +120,11 @@
                                 <segue destination="awy-hJ-Ni4" kind="presentation" identifier="AddBookSegue" modalTransitionStyle="crossDissolve" id="nqf-F7-9cU"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="fyK-Jl-JTr">
+                            <connections>
+                                <action selector="onDeleteAllBtnClick:" destination="S2n-OV-olL" id="Kow-xN-Ula"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mWR-Xv-bvQ" id="Jwx-CT-qXh"/>

@@ -9,11 +9,11 @@
 
 import SwiftyJSON
 
-
+// MARK: - Callback Type
 typealias FetchDone = (Result<[PLBook]>) -> Void
 typealias AddDone = (Result<PLBook>) -> Void
 
-
+// MARK: - Protocol
 protocol PLAPIService {
 	func fetchBooks(_ completion: @escaping FetchDone)
 	func addBook(_ book: PLBook, completion: @escaping AddDone)
@@ -23,20 +23,21 @@ protocol PLAPIService {
 	//		path: String,
 	//		completion:() -> ()
 	//	)
-	//	func deleteBook(_ path: String, completion:() -> ())
-	//	func deleteBooks(_ completion:() -> ())
+	func deleteBook(_ path: String, completion:() -> ())
+	func deleteBooks(_ completion:() -> ())
 }
 
 
 final class APIServiceController: PLAPIService {
-
+	
+	// MARK: - Properties
 	lazy var defaultSession: URLSession = {
 		let defaultConfiguration = URLSessionConfiguration.default
 		let session = URLSession(configuration: defaultConfiguration)
 		return session
 	}()
-
 	
+	// MARK: - Fetch all books
 	func fetchBooks(_ completion: @escaping FetchDone) {
 		let queue = DispatchQueue.global(qos: .background)
 		
@@ -44,7 +45,8 @@ final class APIServiceController: PLAPIService {
 		queue.async(execute: {
 			if let url = URL(string: API.books) {
 				
-				(unownedSelf.defaultSession.dataTask(with: url) { (data, response, error) in
+				(unownedSelf.defaultSession.dataTask(with: url) {
+					(data, response, error) in
 					
 					var books: [PLBook] = []
 					
@@ -69,10 +71,11 @@ final class APIServiceController: PLAPIService {
 			}
 		})
 	}
-
+	
+	// MARK: - Create a book
 	func addBook(_ book: PLBook, completion: @escaping AddDone) {
 		let url: URL = URL(string: API.books)!
-	
+		
 		let stringPost="title=" + book.title +
 									"&author=" + book.author +
 									"&publisher=" + book.publisher +
@@ -83,9 +86,11 @@ final class APIServiceController: PLAPIService {
 		var request = URLRequest(url: url)
 		request.httpMethod = "POST"
 		request.httpBody = data
-		request.timeoutInterval = 15
+		request.timeoutInterval = 10
 		
-		let task = defaultSession.dataTask(with: request) { (data, response, error) in
+		let task = defaultSession.dataTask(with: request) {
+			(data, response, error) in
+			
 			if let error = error {
 				return completion( Result.failure(error) )
 			}
@@ -96,11 +101,11 @@ final class APIServiceController: PLAPIService {
 			let bookJSONData = JSON(data:data)
 			let book = PLBook(json: bookJSONData)
 			completion( Result.success(book) )
-
+			
 		}
 		task.resume()
 	}
-	//
+	
 	//	func getBook(_ path: String, completion:() -> ()) {
 	//		let requestURL = API.server + path
 	//		Alamofire.request(.GET, requestURL).responseJSON { response in
@@ -124,22 +129,27 @@ final class APIServiceController: PLAPIService {
 	//
 	//		}
 	//	}
-	//
-	//	func deleteBook(_ path: String, completion:() -> ()) {
-	//		let requestURL = API.server + path
-	//		Alamofire.request(.DELETE, requestURL)
-	//			.validate(statusCode: 200..<300)
-	//			.response{(request, response, data, error) in
-	//
-	//		}
-	//	}
-	//
-	//	func deleteBooks(_ completion:() -> ()) {
-	//		Alamofire.request(.DELETE, API.cleanBooks)
-	//			.validate(statusCode: 200..<300)
-	//			.response{(request, response, data, error) in
-	//				
-	//		}
-	//	}
+	
+	// MARK: - Delete a book
+	func deleteBook(_ path: String, completion:() -> ()) {
+//		let url = API.server + path
+		
+	}
+	
+	// MARK: - Delete all books
+	func deleteBooks(_ completion:() -> ()) {
+		let queue = DispatchQueue.global(qos: .background)
+		
+		unowned let unownedSelf = self
+		queue.async(execute: {
+			if let url: URL = URL(string: API.cleanBooks) {
+				
+				(unownedSelf.defaultSession.dataTask(with: url) {
+					(data, response, error) in
+					
+				})
+			}
+		})
+	}
 	
 }

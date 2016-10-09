@@ -8,18 +8,21 @@
 
 import Material
 
+// MARK: - API Constants
 enum API {
   static let server  = "http://prolific-interview.herokuapp.com/57f7b32592f7ad0009dc8656/"
   static let books = server + "books/"
   static let cleanBooks = server + "clean/"
 }
 
+// MARK: - Global Constants
 enum Constants {
   static let cellReuseIdentifier = "cell"
   static let addBookSegue = "AddBookSegue"
   static let PLNewBookFormView = "PLNewBookFormView"
 }
 
+// MARK: - Colors
 struct PLColor {
   static let cleanRedColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
 }
