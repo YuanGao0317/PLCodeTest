@@ -10,12 +10,6 @@ import UIKit
 
 
 extension PLAddBookViewController {
-//  func snackMessage(_ message: String) {
-//    let snackbar = TTGSnackbar.init(message: message, duration: .middle)
-//    snackbar.animationType = .slideFromTopBackToTop
-//    snackbar.show()
-//  }
-  
   func showWarningMessage() {
     let alertController = UIAlertController(title: "Warning",
                                             message: "Are you sure you want to leave this page?",

@@ -10,8 +10,10 @@ import TTGSnackbar
 
 final class MessageController {
   class func snackMessage(_ message: String) {
-    let snackbar = TTGSnackbar.init(message: message, duration: .short)
-    snackbar.animationType = .slideFromTopBackToTop
-    snackbar.show()
+    DispatchQueue.main.async {
+      let snackbar = TTGSnackbar.init(message: message, duration: .short)
+      snackbar.animationType = .slideFromTopBackToTop
+      snackbar.show()
+    }
   }
 }

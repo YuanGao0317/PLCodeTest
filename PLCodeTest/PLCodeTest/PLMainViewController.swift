@@ -16,8 +16,7 @@ class PLMainViewController: UIViewController {
 	var books: [PLBook] = [] {
 		didSet {
 			DispatchQueue.main.async { [unowned me = self] in
-				me.tableView.reloadData()
-				me.tableView.reloadRows(at: me.tableView.indexPathsForVisibleRows!, with: .right)
+				me.tableView.reloadSections([0], with: .fade)
 			}
 		}
 	}
@@ -42,18 +41,7 @@ class PLMainViewController: UIViewController {
 			return
 		}
 		
-    apiService.deleteBooks { (success) in
-			if success {
-				self.books = []
-				DispatchQueue.main.async {
-					MessageController.snackMessage("All books are deleted!")
-				}
-			} else {
-				DispatchQueue.main.async {
-					MessageController.snackMessage("Failed to delete all books.")
-				}
-			}
-		}
+		showWarningMessage()
   }
 	
 	@IBAction func onAddBtnClick(_ sender: UIBarButtonItem) {
@@ -84,9 +72,38 @@ class PLMainViewController: UIViewController {
 				let books = try result.resolve()
 				self.books = books
 			} catch {
-				debugPrint(error)
+				MessageController.snackMessage("Failed to fetch books.")
 			}
 		}
 	}
+	
+	private func deleteAllBooks() {
+		apiService.deleteBooks { (success) in
+			if success {
+				self.books = []
+				MessageController.snackMessage("All books are deleted!")
+			} else {
+				MessageController.snackMessage("Failed to delete all books.")
+			}
+		}
+	}
+	
+	private func showWarningMessage() {
+		let alertController = UIAlertController(title: "Warning",
+		                                        message: "Are you sure you want to delete all books?",
+		                                        preferredStyle: .alert)
+		
+		unowned let unownedSelf = self
+		let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+			unownedSelf.deleteAllBooks()
+		}
+		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+		
+		alertController.addAction(deleteAction)
+		alertController.addAction(cancelAction)
+		
+		present(alertController, animated: true, completion: nil)
+	}
 }
+
 
