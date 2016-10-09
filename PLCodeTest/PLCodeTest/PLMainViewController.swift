@@ -28,9 +28,22 @@ class PLMainViewController: UIViewController {
 		loadData()
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		loadData()
+	}
+	
 	// MARK: - Event Responses
   @IBAction func onDeleteAllBtnClick(_ sender: UIBarButtonItem) {
-    
+    apiService.deleteBooks { (success) in
+			if success {
+				self.books = []
+			} else {
+				DispatchQueue.main.async {
+					MessageController.snackMessage("Failed to delete all books.")
+				}
+			}
+		}
   }
 	
 	@IBAction func onAddBtnClick(_ sender: UIBarButtonItem) {

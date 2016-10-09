@@ -49,20 +49,20 @@ class PLAddBookViewController: UIViewController {
           let _ = try result.resolve()
           DispatchQueue.main.async { [unowned that = self] in
             that.activityIndicator.stopAnimating()
-            that.snackMessage("Book is created!")
+            MessageController.snackMessage("Book is created!")
             that.resetFormTextFields()
           }
         } catch {
           DispatchQueue.main.async { [unowned that = self] in
             that.activityIndicator.stopAnimating()
-            that.snackMessage("Failed to create book.")
+            MessageController.snackMessage("Failed to create book.")
           }
         }
       }
     } catch ValidationError.isEmpty {
-      snackMessage("Title and Author cannot be empty.")
+      MessageController.snackMessage("Title and Author cannot be empty.")
     } catch {
-      snackMessage("Unrecognized Error.")
+      MessageController.snackMessage("Unrecognized Error.")
     }
   }
   

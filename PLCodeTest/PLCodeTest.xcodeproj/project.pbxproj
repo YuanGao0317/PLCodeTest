@@ -16,6 +16,7 @@
 		30D5565B1DA94FAF006D7003 /* PLNewBookFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D5565A1DA94FAF006D7003 /* PLNewBookFormView.xib */; };
 		30D5565D1DA9892D006D7003 /* PLValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5565C1DA9892D006D7003 /* PLValidator.swift */; };
 		30D556601DA9979B006D7003 /* PLExtensionAddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5565F1DA9979B006D7003 /* PLExtensionAddBookViewController.swift */; };
+		30D556621DA9C457006D7003 /* PLMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D556611DA9C457006D7003 /* PLMessageController.swift */; };
 		30FEBEB51DA7F67D00B80010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEB41DA7F67D00B80010 /* AppDelegate.swift */; };
 		30FEBEB71DA7F67D00B80010 /* PLMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEBEB61DA7F67D00B80010 /* PLMainViewController.swift */; };
 		30FEBEBA1DA7F67D00B80010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30FEBEB81DA7F67D00B80010 /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		30D5565A1DA94FAF006D7003 /* PLNewBookFormView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLNewBookFormView.xib; sourceTree = "<group>"; };
 		30D5565C1DA9892D006D7003 /* PLValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLValidator.swift; sourceTree = "<group>"; };
 		30D5565F1DA9979B006D7003 /* PLExtensionAddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLExtensionAddBookViewController.swift; sourceTree = "<group>"; };
+		30D556611DA9C457006D7003 /* PLMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLMessageController.swift; sourceTree = "<group>"; };
 		30FEBEB11DA7F67D00B80010 /* PLCodeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLCodeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FEBEB41DA7F67D00B80010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30FEBEB61DA7F67D00B80010 /* PLMainViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PLMainViewController.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
@@ -275,6 +277,7 @@
 			children = (
 				300A25A21DA85146007D653F /* PLErrors.swift */,
 				30FEBEED1DA814BE00B80010 /* PLAPIService.swift */,
+				30D556611DA9C457006D7003 /* PLMessageController.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				30FEBEEE1DA814BE00B80010 /* PLAPIService.swift in Sources */,
 				300A25A61DA85B69007D653F /* PLExtensionMainTableDataSource.swift in Sources */,
 				30FEBEB71DA7F67D00B80010 /* PLMainViewController.swift in Sources */,
+				30D556621DA9C457006D7003 /* PLMessageController.swift in Sources */,
 				300A25A31DA85146007D653F /* PLErrors.swift in Sources */,
 				30FEBEB51DA7F67D00B80010 /* AppDelegate.swift in Sources */,
 				30D556591DA94F95006D7003 /* PLNewBookFormView.swift in Sources */,
