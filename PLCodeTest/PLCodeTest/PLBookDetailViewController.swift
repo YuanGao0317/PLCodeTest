@@ -10,7 +10,7 @@ import UIKit
 import SCLAlertView
 import Material
 
-class PLBookDetailViewController: UIViewController {
+class PLBookDetailViewController: UIViewController, MessageController {
   // MARK: - Properties
   var book: PLBook!
   var apiService: PLAPIService!
@@ -69,12 +69,12 @@ class PLBookDetailViewController: UIViewController {
       that.book.lastCheckedOutBy = checkoutBy.text!
       that.apiService.updateBook(that.book) { (success) in
         if success {
-          MessageController.snackMessage("Updated the book successfully.")
+          self.snackMessage("Updated the book successfully.")
           DispatchQueue.main.async {
             let _ = self.navigationController?.popViewController(animated: true)
           }
         } else {
-          MessageController.snackMessage("Failed to update the book.")
+          self.snackMessage("Failed to update the book.")
         }
       }
     }

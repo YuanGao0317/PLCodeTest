@@ -19,9 +19,7 @@ typealias UpdateDone = (Bool) -> Void
 protocol PLAPIService {
 	func fetchBooks(_ completion: @escaping FetchDone)
 	func addBook(_ book: PLBook, completion: @escaping AddDone)
-	//	func getBook(_ path: String, completion:() -> ())
-	func updateBook(_ book: PLBook, completion: @escaping UpdateDone
-	)
+	func updateBook(_ book: PLBook, completion: @escaping UpdateDone)
 	func deleteBook(_ path: String, completion: @escaping DeleteDone)
 	func deleteBooks(_ completion: @escaping DeleteDone)
 }

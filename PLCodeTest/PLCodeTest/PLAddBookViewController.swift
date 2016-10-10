@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PLAddBookViewController: UIViewController {
+class PLAddBookViewController: UIViewController, MessageController {
   
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var formView: PLNewBookFormView!
@@ -50,20 +50,20 @@ class PLAddBookViewController: UIViewController {
           let _ = try result.resolve()
           DispatchQueue.main.async { [unowned that = self] in
             that.activityIndicator.stopAnimating()
-            MessageController.snackMessage("Book is created!")
+            self.snackMessage("Book is created!")
             that.resetFormTextFields()
           }
         } catch {
           DispatchQueue.main.async { [unowned that = self] in
             that.activityIndicator.stopAnimating()
-            MessageController.snackMessage("Failed to create book.")
+            self.snackMessage("Failed to create book.")
           }
         }
       }
     } catch PLValidationError.isEmpty {
-      MessageController.snackMessage("Title and Author cannot be empty.")
+      self.snackMessage("Title and Author cannot be empty.")
     } catch {
-      MessageController.snackMessage("Unrecognized Error.")
+      self.snackMessage("Unrecognized Error.")
     }
   }
   

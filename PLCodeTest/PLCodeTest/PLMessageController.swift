@@ -8,8 +8,22 @@
 
 import TTGSnackbar
 
-final class MessageController {
-  static func snackMessage(_ message: String) {
+//final class MessageController {
+//  static func snackMessage(_ message: String) {
+//    DispatchQueue.main.async {
+//      let snackbar = TTGSnackbar.init(message: message, duration: .short)
+//      snackbar.animationType = .slideFromTopBackToTop
+//      snackbar.show()
+//    }
+//  }
+//}
+
+protocol MessageController {
+  func snackMessage(_ message: String)
+}
+
+extension MessageController {
+  func snackMessage(_ message: String) {
     DispatchQueue.main.async {
       let snackbar = TTGSnackbar.init(message: message, duration: .short)
       snackbar.animationType = .slideFromTopBackToTop

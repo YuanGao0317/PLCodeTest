@@ -42,7 +42,7 @@ extension PLMainViewController: UITableViewDataSource {
     unowned let unownedSelf = self
     apiService.deleteBook(book.url) { (success) in
       guard success else {
-        MessageController.snackMessage("Failed to delete the book.")
+        self.snackMessage("Failed to delete the book.")
         return
       }
       unownedSelf.books.remove(at: indexPath.row)

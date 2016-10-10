@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PLMainViewController: UIViewController {
+class PLMainViewController: UIViewController, MessageController {
 	// MARK: - Properties
 	@IBOutlet weak var tableView: UITableView!
 	lazy var apiService: PLAPIService = APIServiceController()
@@ -32,7 +32,7 @@ class PLMainViewController: UIViewController {
 	// MARK: - Event Responses
   @IBAction func onDeleteAllBtnClick(_ sender: UIBarButtonItem) {
 		guard self.books.count > 0 else {
-			MessageController.snackMessage("There is no book.")
+			self.snackMessage("There is no book.")
 			return
 		}
 		
@@ -74,7 +74,7 @@ class PLMainViewController: UIViewController {
 				let books = try result.resolve()
 				self.books = books
 			} catch {
-				MessageController.snackMessage("Failed to fetch books.")
+				self.snackMessage("Failed to fetch books.")
 			}
 		}
 	}
@@ -84,9 +84,9 @@ class PLMainViewController: UIViewController {
 		apiService.deleteBooks { (success) in
 			if success {
 				self.books = []
-				MessageController.snackMessage("All books are deleted!")
+				self.snackMessage("All books are deleted!")
 			} else {
-				MessageController.snackMessage("Failed to delete all books.")
+				self.snackMessage("Failed to delete all books.")
 			}
 		}
 	}
