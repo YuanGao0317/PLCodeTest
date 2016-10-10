@@ -27,9 +27,8 @@ PL Code Test
 - Controllers
 
   |- Main
-  
-    |- PLMainViewController   
-      - This is the main view controller with a table view. I moved the table view's dataSource and delegate into its extension. I am able to delete all books, add a book, and delete one book by sliding to left.
+    |- PLMainViewController 
+    - This is the main view controller with a table view. I moved the table view's dataSource and delegate into its extension. I am able to delete all books, add a book, and delete one book by sliding to left.
     
   |- PLAddBookViewController
     - I can create a book in this view controller. I developed the form as a partial view in Components folder for the purpose of reusing and making its controller lighter. I also can move the creating function into the form view in order to let the form communicate with the back-end server like VM in MVVM, but I did not because this is a small project. So just leave this creating function in the controller first to make a clean MVC.
