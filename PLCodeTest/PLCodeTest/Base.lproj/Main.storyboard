@@ -18,7 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4V5-RG-B77">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4V5-RG-B77">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Add Book" id="7M5-0z-evo">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="MqF-wZ-zVA">
@@ -128,7 +129,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mWR-Xv-bvQ" id="Jwx-CT-qXh"/>
-                        <segue destination="ejS-KP-WHd" kind="show" identifier="ShowBookDetailSegue" id="Zoj-nN-WKr"/>
+                        <segue destination="ejS-KP-WHd" kind="show" identifier="ShowBookDetailSegue" id="FFv-J2-E6R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMi-Cr-kWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,13 +158,22 @@
                             <constraint firstItem="TG1-zD-m5v" firstAttribute="leading" secondItem="Wkk-c7-Jxq" secondAttribute="leading" id="zwL-Oa-X0k"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="50W-C0-W8W">
+                        <barButtonItem key="rightBarButtonItem" image="share" id="B0n-WI-R9X">
+                            <connections>
+                                <action selector="onShareBtnClick:" destination="ejS-KP-WHd" id="tft-Mi-Jgk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bookDetailView" destination="TG1-zD-m5v" id="XxF-tH-vIh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEY-62-6HP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2972" y="689"/>
+            <point key="canvasLocation" x="3177" y="598"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BFh-NM-7pX">
@@ -187,5 +197,6 @@
     </scenes>
     <resources>
         <image name="add" width="32" height="32"/>
+        <image name="share" width="23" height="29"/>
     </resources>
 </document>

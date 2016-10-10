@@ -144,7 +144,7 @@ private struct FormLayout {
   private func prepareRaisedButton() {
     raisedbutton = RaisedButton(title: "Submit", titleColor: Color.white)
     raisedbutton.pulseColor = Color.white
-    raisedbutton.backgroundColor = PLColor.cleanRed
+    raisedbutton.backgroundColor = PLColor.global
     
     view.layout(raisedbutton)
       .width(FormLayout.RaisedButton.width)

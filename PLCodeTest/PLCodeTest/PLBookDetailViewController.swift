@@ -28,6 +28,12 @@ class PLBookDetailViewController: UIViewController {
     showAlertView()
   }
   
+  @IBAction func onShareBtnClick(_ sender: UIBarButtonItem) {
+    let shareContent = "Check out this book '\(book.title)' using Prolific Library"
+    let itemsToShare = [shareContent]
+    let activityVC = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+    present(activityVC, animated: true, completion: nil)
+  }
   
   
   

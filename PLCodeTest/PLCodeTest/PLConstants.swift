@@ -27,6 +27,7 @@ enum Constants {
 // MARK: - Colors
 struct PLColor {
   static let cleanRed = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+  static let global = cleanRed
   static let white = UIColor.white
 }
 

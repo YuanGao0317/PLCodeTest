@@ -22,11 +22,6 @@ class PLMainViewController: UIViewController {
 	}
 	
 	// MARK: - Life Cycle
-	override func viewDidLoad() {
-		super.viewDidLoad()
-
-		loadData()
-	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
