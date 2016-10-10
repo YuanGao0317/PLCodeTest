@@ -17,6 +17,7 @@ import UIKit
   @IBOutlet weak var publisherLabel: UILabel!
   @IBOutlet weak var categoriesLabel: UILabel!
   @IBOutlet weak var lastCheckedOutLabel: UILabel!
+  @IBOutlet weak var checkoutBtn: UIButton!
 
   
   // MARK: - Life Cycle

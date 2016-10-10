@@ -96,9 +96,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="ejS-KP-WHd" kind="show" identifier="ShowBookDetailSegue" id="Ne0-7D-nFA"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -131,6 +128,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mWR-Xv-bvQ" id="Jwx-CT-qXh"/>
+                        <segue destination="ejS-KP-WHd" kind="show" identifier="ShowBookDetailSegue" id="Zoj-nN-WKr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMi-Cr-kWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -149,16 +147,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TG1-zD-m5v" customClass="PLBookDetailView" customModule="PLCodeTest" customModuleProvider="target">
-                                <color key="backgroundColor" red="0.81916015624999994" green="0.81916015624999994" blue="0.81916015624999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TG1-zD-m5v" customClass="PLBookDetailView" customModule="PLCodeTest" customModuleProvider="target"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TG1-zD-m5v" firstAttribute="bottom" secondItem="BIT-vr-4xU" secondAttribute="top" id="8Tr-pu-tTq"/>
-                            <constraint firstItem="TG1-zD-m5v" firstAttribute="top" secondItem="4q3-O6-iZz" secondAttribute="bottom" id="GRP-Oy-egX"/>
-                            <constraint firstAttribute="trailing" secondItem="TG1-zD-m5v" secondAttribute="trailing" id="QJS-Jf-0wU"/>
-                            <constraint firstItem="TG1-zD-m5v" firstAttribute="leading" secondItem="Wkk-c7-Jxq" secondAttribute="leading" id="fdd-6A-qIf"/>
+                            <constraint firstItem="TG1-zD-m5v" firstAttribute="top" secondItem="4q3-O6-iZz" secondAttribute="bottom" id="HyW-f6-QOU"/>
+                            <constraint firstItem="TG1-zD-m5v" firstAttribute="bottom" secondItem="BIT-vr-4xU" secondAttribute="top" id="QGs-g2-GFw"/>
+                            <constraint firstAttribute="trailing" secondItem="TG1-zD-m5v" secondAttribute="trailing" id="c1M-wQ-Vh4"/>
+                            <constraint firstItem="TG1-zD-m5v" firstAttribute="leading" secondItem="Wkk-c7-Jxq" secondAttribute="leading" id="zwL-Oa-X0k"/>
                         </constraints>
                     </view>
                     <connections>
@@ -167,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEY-62-6HP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3277.5999999999999" y="292.80359820089956"/>
+            <point key="canvasLocation" x="3007" y="293"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BFh-NM-7pX">

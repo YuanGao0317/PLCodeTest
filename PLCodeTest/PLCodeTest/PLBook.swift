@@ -11,8 +11,8 @@ struct PLBook {
   let id: Int?
   let author: String
   let categories: String
-  let lastCheckedOut: String
-  let lastCheckedOutBy: String
+  var lastCheckedOut: String
+  var lastCheckedOutBy: String
   let publisher: String
   let title: String
   let url: String
