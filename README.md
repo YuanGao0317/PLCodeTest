@@ -1,6 +1,8 @@
 # PLCodeTest
 PL Code Test
 
+![MainView](screenshoot/screen_1.png "screen-2") ![NewBookView](screenshoot/screen_2.png "screen-2")
+![BookDetailView](screenshoot/screen_3.png "screen-3") ![Checkout](screenshoot/screen_4.png "screen-4")
 
 ## Implementation Details
 - Utils
