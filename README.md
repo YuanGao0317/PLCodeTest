@@ -1,7 +1,7 @@
 # PLCodeTest
 PL Code Test
 
-## Screenshot
+## Screenshots
 <img alt="MainView" src="screenshot/screen_1.png" width="300" height="500" />
 <img alt="NewBookView" src="screenshot/screen_2.png" width="300" height="500" />
 <img alt="BookDetailView" src="screenshot/screen_3.png" width="300" height="500" />
