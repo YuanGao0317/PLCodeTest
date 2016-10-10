@@ -39,3 +39,7 @@ PL Code Test
     
     
 ## CocoaPods
+  - pod 'SwiftyJSON'
+  - pod 'Material', '~> 2.0'
+  - pod 'TTGSnackbar'
+  - pod 'SCLAlertView'
