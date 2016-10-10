@@ -1,8 +1,11 @@
 # PLCodeTest
 PL Code Test
 
-![MainView](screenshoot/screen_1.png "screen-2") ![NewBookView](screenshoot/screen_2.png "screen-2")
-![BookDetailView](screenshoot/screen_3.png "screen-3") ![Checkout](screenshoot/screen_4.png "screen-4")
+## Screenshot
+<img alt="MainView" src="screenshot/screen_1.png" width="300" height="500" />
+<img alt="NewBookView" src="screenshot/screen_2.png" width="300" height="500" />
+<img alt="BookDetailView" src="screenshot/screen_3.png" width="300" height="500" />
+<img alt="Checkout" src="screenshot/screen_4.png" width="300" height="500" />
 
 ## Implementation Details
 - Utils
