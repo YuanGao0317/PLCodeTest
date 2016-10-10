@@ -136,7 +136,7 @@
             </objects>
             <point key="canvasLocation" x="2105" y="293"/>
         </scene>
-        <!--Book Detail View Controller-->
+        <!--Book-->
         <scene sceneID="Cpu-7C-DqQ">
             <objects>
                 <viewController id="ejS-KP-WHd" customClass="PLBookDetailViewController" customModule="PLCodeTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,14 +152,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TG1-zD-m5v" firstAttribute="top" secondItem="4q3-O6-iZz" secondAttribute="bottom" id="HyW-f6-QOU"/>
-                            <constraint firstItem="TG1-zD-m5v" firstAttribute="bottom" secondItem="BIT-vr-4xU" secondAttribute="top" id="QGs-g2-GFw"/>
-                            <constraint firstAttribute="trailing" secondItem="TG1-zD-m5v" secondAttribute="trailing" id="c1M-wQ-Vh4"/>
-                            <constraint firstItem="TG1-zD-m5v" firstAttribute="leading" secondItem="Wkk-c7-Jxq" secondAttribute="leading" id="zwL-Oa-X0k"/>
+                            <constraint firstItem="TG1-zD-m5v" firstAttribute="leading" secondItem="Wkk-c7-Jxq" secondAttribute="leading" id="ADg-cy-O3S"/>
+                            <constraint firstItem="TG1-zD-m5v" firstAttribute="top" secondItem="4q3-O6-iZz" secondAttribute="bottom" id="KfW-Ua-g5N"/>
+                            <constraint firstAttribute="trailing" secondItem="TG1-zD-m5v" secondAttribute="trailing" id="Lcg-Kx-oGv"/>
+                            <constraint firstAttribute="bottom" secondItem="TG1-zD-m5v" secondAttribute="bottom" id="aHx-Gc-Zlt"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="50W-C0-W8W">
+                    <navigationItem key="navigationItem" title="Book" id="50W-C0-W8W">
                         <barButtonItem key="rightBarButtonItem" image="share" id="B0n-WI-R9X">
                             <connections>
                                 <action selector="onShareBtnClick:" destination="ejS-KP-WHd" id="tft-Mi-Jgk"/>
@@ -173,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEY-62-6HP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3177" y="598"/>
+            <point key="canvasLocation" x="2972" y="594.15292353823088"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BFh-NM-7pX">
