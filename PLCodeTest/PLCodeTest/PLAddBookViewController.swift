@@ -10,11 +10,13 @@ import UIKit
 
 class PLAddBookViewController: UIViewController {
   
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var formView: PLNewBookFormView!
-  var apiService: PLAPIService?
+  var apiService: PLAPIService!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     setupFormView()
   }
   
@@ -42,24 +44,26 @@ class PLAddBookViewController: UIViewController {
                             title: title,
                             url: ""
       )
-      
-      apiService?.addBook(book) { (result) in
+      activityIndicator.startAnimating()
+      apiService.addBook(book) { (result) in
         do {
           let _ = try result.resolve()
           DispatchQueue.main.async { [unowned that = self] in
-            that.snackMessage("Book is created!")
+            that.activityIndicator.stopAnimating()
+            MessageController.snackMessage("Book is created!")
             that.resetFormTextFields()
           }
         } catch {
           DispatchQueue.main.async { [unowned that = self] in
-            that.snackMessage("Failed to create book.")
+            that.activityIndicator.stopAnimating()
+            MessageController.snackMessage("Failed to create book.")
           }
         }
       }
-    } catch ValidationError.isEmpty {
-      snackMessage("Title and Author cannot be empty.")
+    } catch PLValidationError.isEmpty {
+      MessageController.snackMessage("Title and Author cannot be empty.")
     } catch {
-      snackMessage("Unrecognized Error.")
+      MessageController.snackMessage("Unrecognized Error.")
     }
   }
   
@@ -72,10 +76,7 @@ class PLAddBookViewController: UIViewController {
   
   private func resetFormTextFields() {
     view.endEditing(true)
-    formView.titleField.text = ""
-    formView.authorField.text = ""
-    formView.publisherField.text = ""
-    formView.categoriesField.text = ""
+    formView.resetTextFields()
   }
   
 }

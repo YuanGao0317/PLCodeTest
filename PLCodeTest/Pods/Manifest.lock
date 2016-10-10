@@ -1,18 +1,30 @@
 PODS:
   - Material (2.1.0)
+  - SCLAlertView (0.6.0)
   - SwiftyJSON (3.1.1)
   - TTGSnackbar (1.2.1)
 
 DEPENDENCIES:
   - Material (~> 2.0)
+  - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift`)
   - SwiftyJSON
   - TTGSnackbar
 
+EXTERNAL SOURCES:
+  SCLAlertView:
+    :git: https://github.com/vikmeup/SCLAlertView-Swift
+
+CHECKOUT OPTIONS:
+  SCLAlertView:
+    :commit: ac3d58970d785da0755049a28eca193893c142d0
+    :git: https://github.com/vikmeup/SCLAlertView-Swift
+
 SPEC CHECKSUMS:
   Material: c5c334bd7fa8c0307cb35be143b7c51c5e2c52a7
+  SCLAlertView: 0f6b3c23a48b4993564ff1dd3c065782e4b2b687
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
   TTGSnackbar: 294ccf62c61faec20b05f967a2e62bd1a912106f
 
-PODFILE CHECKSUM: e14a9df6fc1c4d720e74f0cdd4c81a0cb626ac91
+PODFILE CHECKSUM: 1a259ee7c819cd28d771c0505ac1aefaa0797ed8
 
 COCOAPODS: 1.1.0.rc.2

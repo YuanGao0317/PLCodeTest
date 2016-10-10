@@ -6,25 +6,27 @@
 //  Copyright © 2016 YuanGao. All rights reserved.
 //
 
-enum Result<T> {
+// MARK: - Result
+enum PLResult<T> {
 	case success(T)
 	case failure(Error)
 }
 
-extension Result {
+extension PLResult {
 	func resolve() throws -> T {
 		switch self {
-		case Result.success(let value): return value
-		case Result.failure(let error): throw error
+		case PLResult.success(let value): return value
+		case PLResult.failure(let error): throw error
 		}
 	}
 }
 
-enum BookError: Error {
+// MARK: - Book Error
+enum PLBookError: Error {
 	case noData, creationFailed
 }
 
-
-enum ValidationError: Error {
+// MARK: - Validation Error
+enum PLValidationError: Error {
 	case isEmpty
 }

@@ -8,14 +8,16 @@
 import SwiftyJSON
 
 struct PLBook {
+  let id: Int?
   let author: String
   let categories: String
-  let lastCheckedOut: String
-  let lastCheckedOutBy: String
+  var lastCheckedOut: String
+  var lastCheckedOutBy: String
   let publisher: String
   let title: String
   let url: String
   
+  // MARK: - Initiallizers
   init(
     author: String,
     categories: String,
@@ -28,11 +30,13 @@ struct PLBook {
   {
     
     guard
-      Validator
+      PLValidator
         .required
         .isValid([title, author])
-      else { throw ValidationError.isEmpty
+      else { throw PLValidationError.isEmpty
     }
+    
+    self.id = nil
     self.author = author
     self.categories = categories
     self.lastCheckedOut = lastCheckedOut
@@ -42,7 +46,8 @@ struct PLBook {
     self.url = url
   }
   
-  init(json: JSON) {    
+  init(json: JSON) {
+    self.id = json["id"].intValue
     self.author = json["author"].stringValue
     self.categories = json["categories"].stringValue
     self.lastCheckedOut = json["lastCheckedOut"].stringValue

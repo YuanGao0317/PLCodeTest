@@ -27,4 +27,25 @@ extension PLMainViewController: UITableViewDataSource {
     
     return cell
   }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    switch editingStyle {
+    case .delete:
+      deleteBook(at: indexPath)
+    default: break
+    }
+  }
+  
+  private func deleteBook(at indexPath: IndexPath) {
+    let book = books[indexPath.row]
+    
+    unowned let unownedSelf = self
+    apiService.deleteBook(book.url) { (success) in
+      guard success else {
+        MessageController.snackMessage("Failed to delete the book.")
+        return
+      }
+      unownedSelf.books.remove(at: indexPath.row)
+    }
+  }
 }

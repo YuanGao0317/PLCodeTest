@@ -23,9 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   
   private func globalAppearence() {
-    UINavigationBar.appearance().barTintColor = PLColor.cleanRedColor
-    UIBarButtonItem.appearance().tintColor = UIColor.white
-    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+    UINavigationBar.appearance().barTintColor = PLColor.global
+    UIBarButtonItem.appearance().tintColor = PLColor.white
+    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : PLColor.white]
   }
   
 }

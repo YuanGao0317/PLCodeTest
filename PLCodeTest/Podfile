@@ -9,6 +9,7 @@ target 'PLCodeTest' do
   pod 'SwiftyJSON'
   pod 'Material', '~> 2.0'
   pod 'TTGSnackbar'
+  pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift'
 
   target 'PLCodeTestTests' do
     inherit! :search_paths

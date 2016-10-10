@@ -12,7 +12,10 @@ import UIKit
 extension PLMainViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print((indexPath as NSIndexPath).row)
-    
+    performSegue(withIdentifier: Constants.showBookSegue, sender: indexPath)
+  }
+  
+  func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    return .delete
   }
 }
