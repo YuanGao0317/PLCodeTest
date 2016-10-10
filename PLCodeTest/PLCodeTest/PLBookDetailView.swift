@@ -47,10 +47,6 @@ import UIKit
     lastCheckedOutLabel.text = lastCheckedOut
   }
   
-  static func formatLastCheckedOut(with lastCheckedOut: String, and lastCheckedOutBy: String) -> String {
-    
-    return ""
-  }
   
   // MARK: - Privatess
   private func showViewSetup() {

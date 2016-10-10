@@ -56,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELQ-Ml-aOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2104.8000000000002" y="-408.84557721139436"/>
+            <point key="canvasLocation" x="2972" y="-165"/>
         </scene>
         <!--Books-->
         <scene sceneID="GDf-cc-QHY">
@@ -144,7 +144,7 @@
                         <viewControllerLayoutGuide type="bottom" id="BIT-vr-4xU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wkk-c7-Jxq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TG1-zD-m5v" customClass="PLBookDetailView" customModule="PLCodeTest" customModuleProvider="target"/>
@@ -163,16 +163,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEY-62-6HP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3007" y="293"/>
+            <point key="canvasLocation" x="2972" y="689"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BFh-NM-7pX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dcQ-rA-5Yd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bF1-Pv-SQx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="bF1-Pv-SQx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

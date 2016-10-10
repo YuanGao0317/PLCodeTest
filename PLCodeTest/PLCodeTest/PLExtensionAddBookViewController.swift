@@ -15,9 +15,8 @@ extension PLAddBookViewController {
                                             message: "Are you sure you want to leave this page?",
                                             preferredStyle: .alert)
     
-    unowned let unownedSelf = self
     let okAction = UIAlertAction(title: "Close", style: .destructive) { (action) in
-      unownedSelf.presentingViewController?.dismiss(animated: true, completion: nil)
+      self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
     

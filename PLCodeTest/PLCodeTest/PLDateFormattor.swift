@@ -13,7 +13,10 @@ enum PLFormattor {
 
 extension PLFormattor {
   func formatted(from lastCheckedOutBy: String, and lastCheckedOut: String) -> String {
-    if self == .lastCheckedOut {
+    if self == .lastCheckedOut &&
+      lastCheckedOutBy != "" &&
+      lastCheckedOut != ""
+    {
       return lastCheckedOutBy + "@" + lastCheckedOut
     } else {
       return ""
