@@ -1,5 +1,5 @@
 # PLCodeTest
-PL Code Test
+PL Code Test written in Swift3
 
 ## Screenshots
 <img alt="MainView" src="screenshot/screen_1.png" width="300" height="500" />
