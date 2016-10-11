@@ -7,11 +7,11 @@
 //
 import UIKit
 
-enum PLFormattor {
+enum PLFormatter {
   case lastCheckedOut, dateToString
 }
 
-extension PLFormattor {
+extension PLFormatter {
   func formatted(from lastCheckedOutBy: String, and lastCheckedOut: String) -> String {
     if self == .lastCheckedOut &&
       lastCheckedOutBy != "" &&
