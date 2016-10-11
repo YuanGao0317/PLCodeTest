@@ -83,6 +83,8 @@ final class APIServiceController: PLAPIService {
 		                "author": book.author,
 		                "publisher": book.publisher,
 		                "categories": book.categories,
+		                "lastCheckedOut": "",
+		                "lastCheckedOutBy": ""
 		                ]
 		
 		var request = URLRequest(url: url)
@@ -141,7 +143,7 @@ final class APIServiceController: PLAPIService {
 					if let _ = error {
 						return completion(false)
 					}
-
+					let booksJSONData = JSON(data:data!)
 					completion( true )
 				}
 				task.resume()

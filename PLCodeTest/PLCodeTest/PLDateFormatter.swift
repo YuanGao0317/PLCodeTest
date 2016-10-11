@@ -8,7 +8,7 @@
 import UIKit
 
 enum PLFormatter {
-  case lastCheckedOut, dateToString
+  case lastCheckedOut, stringToDate
 }
 
 extension PLFormatter {
@@ -23,12 +23,19 @@ extension PLFormatter {
     }
   }
   
-  func formatted(from date: Date) -> String {
-    if self == .dateToString {
+  func formatted(from string: String) -> String {
+    if self == .stringToDate {
       let dateFormatter = DateFormatter()
-      dateFormatter.dateStyle = .long
-      dateFormatter.timeStyle = .short
-      return dateFormatter.string(from: date)
+//      dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+      dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+      if let date = dateFormatter.date(from: string) {
+        let dateFormatter = DateFormatter()
+              dateFormatter.dateStyle = .long
+              dateFormatter.timeStyle = .medium
+        return dateFormatter.string(from: date)
+      } else {
+        return ""
+      }
     } else {
       return ""
     }
