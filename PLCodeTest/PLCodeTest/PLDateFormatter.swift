@@ -38,7 +38,7 @@ extension PLFormatter {
   func formatted(from string: String) -> String {
     if self == .stringToDate {
       let dateFormatter = DateFormatter()
-//      dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+//      dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
       dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
       if let date = dateFormatter.date(from: string) {
         let dateFormatter = DateFormatter()
