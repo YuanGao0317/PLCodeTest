@@ -17,7 +17,7 @@ extension PLFormattor {
       lastCheckedOutBy != "" &&
       lastCheckedOut != ""
     {
-      return lastCheckedOutBy + "@" + lastCheckedOut
+      return lastCheckedOutBy + " @ " + lastCheckedOut
     } else {
       return ""
     }

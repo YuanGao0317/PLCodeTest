@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author: MyString
+  categories: MyString
+  lastCheckedOut: MyString
+  lastCheckedOutBy: MyString
+  publisher: MyString
+  title: MyString
+  url: MyString
+
+two:
+  author: MyString
+  categories: MyString
+  lastCheckedOut: MyString
+  lastCheckedOutBy: MyString
+  publisher: MyString
+  title: MyString
+  url: MyString

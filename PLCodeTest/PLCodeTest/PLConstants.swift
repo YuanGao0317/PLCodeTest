@@ -11,6 +11,7 @@ import Material
 // MARK: - API Constants
 enum API {
   static let server  = "http://prolific-interview.herokuapp.com/57f7b32592f7ad0009dc8656"
+//  static let server = "http://localhost:3000"
   static let books = server + "/books/"
   static let cleanBooks = server + "/clean/"
 }

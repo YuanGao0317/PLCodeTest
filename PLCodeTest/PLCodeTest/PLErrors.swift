@@ -21,6 +21,10 @@ extension PLResult {
 	}
 }
 
+enum PLNetworkError: Error {
+	case badRequest
+}
+
 // MARK: - Book Error
 enum PLBookError: Error {
 	case noData, creationFailed
