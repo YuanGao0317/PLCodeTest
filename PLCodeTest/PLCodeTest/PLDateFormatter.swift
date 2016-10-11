@@ -8,7 +8,7 @@
 import UIKit
 
 enum PLFormatter {
-  case lastCheckedOut, stringToDate
+  case lastCheckedOut, stringToDate, currentDate
 }
 
 extension PLFormatter {
@@ -18,6 +18,18 @@ extension PLFormatter {
       lastCheckedOut != ""
     {
       return lastCheckedOutBy + " @ " + lastCheckedOut
+    } else {
+      return ""
+    }
+  }
+  
+  func formattedCurrentDate() -> String {
+    if self == .currentDate {
+      let currentDate = Date()
+      let formatter = DateFormatter()
+      formatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
+      formatter.locale = Locale.current
+      return formatter.string(from: currentDate)
     } else {
       return ""
     }

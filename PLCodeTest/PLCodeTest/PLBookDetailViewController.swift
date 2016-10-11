@@ -66,8 +66,8 @@ class PLBookDetailViewController: UIViewController, MessageController {
     let alert = SCLAlertView()
     let checkoutBy = alert.addTextField("Enter your name")
     alert.addButton("Checkout") { [unowned that = self] in
-      let currentDate = Date()
-      that.book.lastCheckedOut = currentDate.description
+      
+      that.book.lastCheckedOut = PLFormatter.currentDate.formattedCurrentDate()
       that.book.lastCheckedOutBy = checkoutBy.text!
       that.apiService.updateBook(that.book) { (success) in
         if success {

@@ -143,7 +143,7 @@ final class APIServiceController: PLAPIService {
 					if let _ = error {
 						return completion(false)
 					}
-					let booksJSONData = JSON(data:data!)
+
 					completion( true )
 				}
 				task.resume()
