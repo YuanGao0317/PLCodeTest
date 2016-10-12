@@ -8,9 +8,7 @@
 
 import TTGSnackbar
 
-protocol MessageController {
-  func snackMessage(_ message: String)
-}
+protocol MessageController {}
 
 extension MessageController {
   func snackMessage(_ message: String) {
