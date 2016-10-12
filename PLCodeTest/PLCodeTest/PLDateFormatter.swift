@@ -7,15 +7,10 @@
 //
 import UIKit
 
-enum PLFormatter {
-  case lastCheckedOut, stringToDate, currentDate
-}
-
-extension PLFormatter {
-  func formatted(from lastCheckedOutBy: String, and lastCheckedOut: String) -> String {
-    if self == .lastCheckedOut &&
-      lastCheckedOutBy != "" &&
-      lastCheckedOut != ""
+struct PLFormatter {
+  static func formattedLastCheckedOut(fromLastCheckedOutBy lastCheckedOutBy: String, andLastCheckedOut lastCheckedOut: String) -> String {
+    if lastCheckedOutBy != "" &&
+       lastCheckedOut != ""
     {
       return lastCheckedOutBy + " @ " + lastCheckedOut
     } else {
@@ -23,34 +18,27 @@ extension PLFormatter {
     }
   }
   
-  func formattedCurrentDate() -> String {
-    if self == .currentDate {
-      let currentDate = Date()
-      let formatter = DateFormatter()
-      formatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
-      formatter.locale = Locale.current
-      return formatter.string(from: currentDate)
+  static func formattedCurrentDate() -> String {
+    let currentDate = Date()
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
+    formatter.locale = Locale.current
+    return formatter.string(from: currentDate)
+  }
+  
+  static func formattedDate(from string: String) -> String {
+    let dateFormatter = DateFormatter()
+//          dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz" // for local api server
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    if let date = dateFormatter.date(from: string) {
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateStyle = .long
+      dateFormatter.timeStyle = .medium
+      return dateFormatter.string(from: date)
     } else {
       return ""
     }
   }
   
-  func formatted(from string: String) -> String {
-    if self == .stringToDate {
-      let dateFormatter = DateFormatter()
-//      dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz" // for local api server
-      dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-      if let date = dateFormatter.date(from: string) {
-        let dateFormatter = DateFormatter()
-              dateFormatter.dateStyle = .long
-              dateFormatter.timeStyle = .medium
-        return dateFormatter.string(from: date)
-      } else {
-        return ""
-      }
-    } else {
-      return ""
-    }
-  }
 }
 

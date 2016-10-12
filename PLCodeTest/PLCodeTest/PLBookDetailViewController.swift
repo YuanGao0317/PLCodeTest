@@ -40,12 +40,9 @@ class PLBookDetailViewController: UIViewController, MessageController {
   
   // MARK: - Private
   private func setupDetailView() {
-    let formattedDate = PLFormatter.stringToDate.formatted(from: book.lastCheckedOut)
+    let formattedDate = PLFormatter.formattedDate(from: book.lastCheckedOut)
     
-    let lastCheckedOut = PLFormatter
-                          .lastCheckedOut
-                          .formatted(from: book.lastCheckedOutBy, and: formattedDate
-    )
+    let lastCheckedOut = PLFormatter.formattedLastCheckedOut(fromLastCheckedOutBy: book.lastCheckedOutBy, andLastCheckedOut: formattedDate)
     
     bookDetailView.setFormContent(
       title: book.title,
@@ -67,7 +64,7 @@ class PLBookDetailViewController: UIViewController, MessageController {
     let checkoutBy = alert.addTextField("Enter your name")
     alert.addButton("Checkout") { [unowned that = self] in
       
-      that.book.lastCheckedOut = PLFormatter.currentDate.formattedCurrentDate()
+      that.book.lastCheckedOut = PLFormatter.formattedCurrentDate()
       that.book.lastCheckedOutBy = checkoutBy.text!
       that.apiService.updateBook(that.book) { (success) in
         if success {
