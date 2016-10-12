@@ -9,6 +9,7 @@
 import UIKit
 
 class PLMainViewController: UIViewController, MessageController {
+	
 	// MARK: - Properties
 	@IBOutlet weak var tableView: UITableView!
 	lazy var apiService: PLAPIService = APIServiceController()
@@ -22,7 +23,6 @@ class PLMainViewController: UIViewController, MessageController {
 	}
 	
 	// MARK: - Life Cycle
-	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
@@ -38,6 +38,17 @@ class PLMainViewController: UIViewController, MessageController {
 		
 		showWarningMessage()
   }
+	
+	func loadData(){
+		apiService.fetchBooks { (result) -> Void in
+			do {
+				let books = try result.resolve()
+				self.books = books
+			} catch {
+				self.snackMessage("Failed to fetch books.")
+			}
+		}
+	}
 	
 	@IBAction func onAddBtnClick(_ sender: UIBarButtonItem) {
 		performSegue(withIdentifier: Constants.addBookSegue, sender: self)
@@ -68,16 +79,6 @@ class PLMainViewController: UIViewController, MessageController {
 		}
 	}
 	
-	func loadData(){
-		apiService.fetchBooks { (result) -> Void in
-			do {
-				let books = try result.resolve()
-				self.books = books
-			} catch {
-				self.snackMessage("Failed to fetch books.")
-			}
-		}
-	}
 	
 	// MARK: - Private
 	private func deleteAllBooks() {
